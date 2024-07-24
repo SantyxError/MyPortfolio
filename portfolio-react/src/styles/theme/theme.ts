@@ -8,6 +8,10 @@ interface DefaultTheme {
       maroon: string;
       whiteTooth: string;
     };
+
+    background:{
+      primary: string;
+    }
   
     gradient: {
       background: string;
@@ -53,6 +57,11 @@ interface DefaultTheme {
       maroon: '#9d4d38',
       whiteTooth: '#fee6cc'
     },
+
+    background:{
+      primary: 'linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%)',
+    },
+
     gradient: {
       background:
         "linear-gradient(180deg, rgba(253,250,243,1) 0%, rgba(243,226,208,1) 50%, rgba(162,132,124,1) 100%)",
