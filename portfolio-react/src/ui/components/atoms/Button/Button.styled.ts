@@ -4,10 +4,13 @@ const COLOR = {
   primary: css`
     background: ${({ theme }) => theme.background.primary};
     color: ${({ theme }) => theme.color.white};
+    border: unset;
   `,
   secondary: css`
-    background-color: ${({ theme }) => theme.color.secondary};
+    background: none;
     color: ${({ theme }) => theme.color.white};
+    border: 2px solid ${({ theme }) => theme.color.white};
+    padding: ${({ theme }) => theme.spacing.m} ${({ theme }) => theme.spacing.l};
   `,
   terciary: css`
     background-color: ${({ theme }) => theme.color.white};
@@ -19,14 +22,26 @@ export const Button = styled.button<{
   variant: "primary" | "secondary" | "terciary";
 }>`
   ${({ variant }) => COLOR[variant]}
-  border-radius: ${({ theme }) => theme.borderRadius.xl};
-  border: unset;
-  padding: ${({ theme }) => theme.spacing.m} ${({ theme }) => theme.spacing.l};
   font-weight: bold;
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
+  padding: 25px 75px;
+  font-size: 18px;
+  border-radius: ${({ theme }) => theme.borderRadius.xxxl};
+  cursor: pointer;
 
-  &:hover {
-    background: linear-gradient(267deg, #b923e1 0.36%, #da7c25 102.06%);
-    transform: scale(1.05);
-  }
+  ${({ variant }) =>
+    variant === "primary" &&
+    css`
+      &:hover {
+        box-shadow: inset 0 0 0 2px white;
+      }
+    `}
+
+  ${({ variant }) =>
+    variant === "secondary" &&
+    css`
+      &:hover {
+        border: 2px solid ${({ theme }) => theme.color.purple};
+      }
+    `}
 `;

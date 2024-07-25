@@ -7,6 +7,8 @@ interface DefaultTheme {
       wheat: string;
       maroon: string;
       whiteTooth: string;
+      purple: string;
+  
     };
 
     background:{
@@ -40,8 +42,21 @@ interface DefaultTheme {
       m: string;
       l: string;
       xl: string;
+      xxl:string;
+      xxxl:string;
     };
   
+
+    border: {
+      xxs:string;
+      xs: string;
+      s: string;
+      m: string;
+      l: string;
+      xl: string;
+    };
+
+
     mediaQueries: {
       mobile: string;
       tablet: string;
@@ -59,7 +74,8 @@ interface DefaultTheme {
       black: "#000000",
       wheat: "#fee6cc",
       maroon: '#9d4d38',
-      whiteTooth: '#fee6cc'
+      whiteTooth: '#fee6cc',
+      purple: '#B415FF',
     },
 
     background:{
@@ -87,6 +103,17 @@ interface DefaultTheme {
       xxxxxl: '5.5rem'
     },
     borderRadius: {
+      xs: "4px",
+      s: "8px",
+      m: "12px",
+      l: "16px",
+      xl: "24px",
+      xxl: "35px",
+      xxxl: "50px"
+    },
+
+    border: {
+      xxs: "2px",
       xs: "4px",
       s: "8px",
       m: "12px",
