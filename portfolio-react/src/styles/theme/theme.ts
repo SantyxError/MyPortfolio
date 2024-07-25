@@ -11,7 +11,11 @@ interface DefaultTheme {
 
     background:{
       primary: string;
-    }
+    };
+
+    fontFamily:{
+      primary: string;
+    };
   
     gradient: {
       background: string;
@@ -60,6 +64,10 @@ interface DefaultTheme {
 
     background:{
       primary: 'linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%)',
+    },
+
+    fontFamily:{
+      primary: 'Outfit',
     },
 
     gradient: {

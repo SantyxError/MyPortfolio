@@ -1,18 +1,14 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:wght@200;400&display=swap');
 
-html,
-body{
-  height:100%;
-}
-
+  html,
   body {
+    height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+    font-family: 'Outfit', sans-serif;
   }
 
   h1,
@@ -22,16 +18,20 @@ body{
   h5,
   h6 {
     font-weight: 400;
-    margin: unset;
+    margin: 0;
   }
 
   ul {
-    margin: unset; 
-    padding: unset; 
+    margin: 0;
+    padding: 0;
   }
 
   li {
     list-style: none;
+  }
+
+  button {
+    font-family: 'Outfit', sans-serif;
   }
 `;
 

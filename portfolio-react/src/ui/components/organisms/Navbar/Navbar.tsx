@@ -1,8 +1,14 @@
 import React from 'react';
-import {  NavMenu, Wrapper } from './Navbar.styled';
-import { Button } from '../../atoms/Button/Button.styled';
+import { NavMenu, Wrapper } from './Navbar.styled';
+import { Button } from '../../atoms/Button/Button';
 
-const Navbar = ({ logo, items }: { logo: string; items: string[] }) => {
+interface NavbarProps {
+  logo: string;
+  items: string[];
+  buttonText: string;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ logo, items, buttonText }) => {
   return (
     <Wrapper>
       <img src={logo} alt="Logo" />
@@ -12,7 +18,7 @@ const Navbar = ({ logo, items }: { logo: string; items: string[] }) => {
         ))}
       </NavMenu>
       <Button variant="primary">
-        Conecta conmigo
+        {buttonText}
       </Button>
     </Wrapper>
   );

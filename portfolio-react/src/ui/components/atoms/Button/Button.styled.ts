@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 const COLOR = {
   primary: css`
@@ -16,13 +16,14 @@ const COLOR = {
 };
 
 export const Button = styled.button<{
-  variant: 'primary' | 'secondary' | 'terciary';
+  variant: "primary" | "secondary" | "terciary";
 }>`
   ${({ variant }) => COLOR[variant]}
   border-radius: ${({ theme }) => theme.borderRadius.xl};
   border: unset;
   padding: ${({ theme }) => theme.spacing.m} ${({ theme }) => theme.spacing.l};
   font-weight: bold;
+  font-family: 'Outfit', sans-serif;
 
   &:hover {
     background: linear-gradient(267deg, #b923e1 0.36%, #da7c25 102.06%);
