@@ -5,8 +5,9 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 40px;
-  margin: 80px 170px;
+  gap: ${({ theme }) => theme.spacing.xl};
+  margin: ${({ theme }) => theme.margin.xxl}
+    ${({ theme }) => theme.margin.xxxxxl};
 `;
 
 export const AboutTitle = styled.div`
@@ -14,22 +15,23 @@ export const AboutTitle = styled.div`
 `;
 
 export const AboutTitleH1 = styled.h1`
-  padding: 0px 30px;
-  font-size: 80px;
+  padding: ${({ theme }) => theme.spacing.none}
+    ${({ theme }) => theme.spacing.xl};
+  font-size: ${({ theme }) => theme.fontSize.xxxxl};
   font-weight: 600;
 `;
 
 export const AboutTitleImg = styled.img`
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: ${({ theme }) => theme.spacing.none};
+  right: ${({ theme }) => theme.spacing.none};
   z-index: -1;
 `;
 
 export const AboutSections = styled.div`
   display: flex;
-  gap: 60px;
-  align-items: stretch; /* Permite que los hijos se estiren para igualar su altura */
+  gap: ${({ theme }) => theme.spacing.xxxxl};
+  align-items: stretch;
 `;
 
 export const AboutLeft = styled.div`
@@ -42,7 +44,6 @@ export const AboutLeft = styled.div`
 export const AboutRight = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 40px;
   max-width: 800px;
   display: flex;
   align-items: center;
@@ -52,15 +53,14 @@ export const AboutRight = styled.div`
 export const AboutParagraph = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  font-size: 21px;
-  font-weight: 500;
-  flex: 1; 
+  gap: ${({ theme }) => theme.spacing.s};
 `;
 
 export const AboutParaText = styled.p`
-  font-size: 18px;
-  line-height: 1.6;
-  margin: 0 0 15px 0;
+  font-size: ${({ theme }) => theme.spacing.s};
+  line-height: ${({ theme }) => theme.lineHeight.m};
+  margin: ${({ theme }) => theme.spacing.none}
+    ${({ theme }) => theme.spacing.none} ${({ theme }) => theme.spacing.m}
+    ${({ theme }) => theme.spacing.none};
   text-align: justify;
 `;

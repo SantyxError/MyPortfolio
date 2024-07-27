@@ -23,9 +23,9 @@ export const Button = styled.button<{
 }>`
   ${({ variant }) => COLOR[variant]}
   font-weight: bold;
-  font-family: "Outfit", sans-serif;
-  padding: 25px 75px;
-  font-size: 18px;
+  font-family: ${({ theme }) => theme.fontFamily.primary};
+  font-size: ${({ theme }) => theme.fontSize.l};
+  padding: ${({ theme }) => theme.spacing.m} ${({ theme }) => theme.spacing.l};
   border-radius: ${({ theme }) => theme.borderRadius.xxxl};
   cursor: pointer;
 

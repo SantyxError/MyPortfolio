@@ -6,13 +6,13 @@ max-width:100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 20px 170px;
+  margin: ${({ theme }) => theme.margin.xl} 170px;
 `;
 
 export const NavMenu = styled.ul`
   display: flex;
   align-items: center;
   list-style: none;
-  gap: 60px;
-  font-size: 20px;
+  gap: ${({ theme }) => theme.spacing.xxxl};
+  font-size: ${({ theme }) => theme.fontSize.xl};
 `;

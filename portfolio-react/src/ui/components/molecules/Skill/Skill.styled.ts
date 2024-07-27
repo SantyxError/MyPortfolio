@@ -8,24 +8,24 @@ export const SkillWrapper = styled.div`
 `;
 
 export const SkillImageContainer = styled.div`
-  width: 70px;
-  height: 70px;
+  width: 4.2rem;
+  height: 4.2rem;
   background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
-  border: 5px solid;
+  margin-bottom: ${({ theme }) => theme.spacing.m};
+  border: ${({ theme }) => theme.border.xs} solid;
   border-image-slice: 1;
-  border-image-source: linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%);
+  border-image-source: ${({ theme }) => theme.background.secondary};
 `;
 
 export const SkillImage = styled.img`
-  width: 50px;
-  height: 50px;
+  width: 3.4rem;
+  height: 3.4rem;
 `;
 
 export const SkillText = styled.p`
   margin: 0;
-  width: 80px;
+  width: 5rem;
 `;

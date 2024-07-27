@@ -10,6 +10,6 @@ export const SkillsListContainer = styled.div`
 export const SkillsListWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  gap: 35px;
+  gap: ${({ theme }) => theme.spacing.xxl};
   max-width: 1200px;
 `;
