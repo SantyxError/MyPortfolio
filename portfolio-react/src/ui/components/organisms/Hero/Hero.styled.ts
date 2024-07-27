@@ -42,16 +42,15 @@ export const HeroAction = styled.div`
 `;
 
 export const HeroConnect = styled.div`
-padding: 25px 45px;
-border-radius:50px;
+  padding: 25px 45px;
+  border-radius: 50px;
   background: linear-gradient(270deg, #df8908 10%, #b415ff 100%);
-  cursor:pointer;
+  cursor: pointer;
 `;
 
 export const HeroResume = styled.div`
-padding: 25px 75px;
-border-radius:50px;
-border:2px solid #fff;
-cursor:pointer;
+  padding: 25px 75px;
+  border-radius: 50px;
+  border: 2px solid #fff;
+  cursor: pointer;
 `;
-

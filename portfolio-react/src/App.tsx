@@ -5,6 +5,7 @@ import Navbar from "./ui/components/organisms/Navbar/Navbar";
 import { theme } from "./styles/theme/index";
 import logo from './assets/logo.svg';
 import Hero from "./ui/components/organisms/Hero/Hero";
+import About from "./ui/components/organisms/About/About";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         connectText="Conecta conmigo"
         resumeText="Mis Trabajos"
       />
+      <About></About>
     </ThemeProvider>
   );
 }
