@@ -4,23 +4,18 @@ import {
   AboutParagraph,
   AboutRight,
   AboutSections,
-  AboutTitle,
-  AboutTitleH1,
-  AboutTitleImg,
   Wrapper,
 } from "./About.styled";
-import theme_pattern from "../../../../assets/theme_pattern.svg";
 import profile_img from "../../../../assets/about_profile.svg";
 import SkillsList from "../SkillsList/SkillsList";
 import Paragraph from "../../atoms/Paragraph/Paragraph";
+import Title from "../../atoms/Title/Title";
+import theme_pattern from "../../../../assets/theme_pattern.svg";
 
 const About = () => {
   return (
     <Wrapper>
-      <AboutTitle>
-        <AboutTitleH1>Sobre mí</AboutTitleH1>
-        <AboutTitleImg src={theme_pattern} alt="Theme Pattern" />
-      </AboutTitle>
+      <Title text="Sobre mí" image={theme_pattern}/>
       <AboutSections>
         <AboutLeft>
           <img src={profile_img} alt="Profile Image" />

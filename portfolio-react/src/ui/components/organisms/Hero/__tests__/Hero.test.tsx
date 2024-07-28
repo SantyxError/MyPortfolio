@@ -2,6 +2,12 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Hero from '../Hero';
+import { ThemeProvider } from 'styled-components';
+import { theme } from '../../../../../styles/theme'; 
+
+const renderWithTheme = (component: React.ReactNode) => {
+  return render(<ThemeProvider theme={theme}>{component}</ThemeProvider>);
+};
 
 jest.mock('../../../atoms/Button/Button.styled', () => ({
   Button: ({ children, onClick }: { children: React.ReactNode; onClick: () => void }) => (
@@ -14,7 +20,7 @@ describe('Hero Component', () => {
   const resumeText = 'Mis Trabajos';
 
   beforeEach(() => {
-    render(<Hero connectText={connectText} resumeText={resumeText} />);
+    renderWithTheme(<Hero connectText={connectText} resumeText={resumeText} />);
   });
 
   it('should render the Hero component', () => {
