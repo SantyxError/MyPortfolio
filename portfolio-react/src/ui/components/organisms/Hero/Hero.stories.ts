@@ -1,5 +1,6 @@
 import { Meta, Story } from '@storybook/react';
 import Hero from './Hero';
+import { theme } from '../src/styles/theme';
 
 const meta: Meta<typeof Hero> = {
   component: Hero,

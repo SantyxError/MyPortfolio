@@ -9,6 +9,7 @@ const meta: Meta = {
     text: { control: "text" },
     image: { control: "text" },
   },
+  tags: ["autodocs"],
 };
 
 export default meta;

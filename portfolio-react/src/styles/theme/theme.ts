@@ -5,11 +5,13 @@ interface DefaultTheme {
     white: string;
     black: string;
     purple: string;
+    bone: string;
   };
 
   background: {
     primary: string;
     secondary: string;
+    terciary: string;
   };
 
   fontFamily: {
@@ -120,11 +122,13 @@ export const theme: DefaultTheme = {
     white: "#ffffff",
     black: "#000000",
     purple: '#B415FF',
+    bone: '#d4d4d4',
   },
 
   background: {
     primary: 'linear-gradient(270deg, #df8908 10%, #b415ff 100%)',
-    secondary: 'linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%)'
+    secondary: 'linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%)',
+    terciary: 'linear-gradient(45deg, #3f0028, #582300)',
   },
 
   fontFamily: {
