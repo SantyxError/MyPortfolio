@@ -2,7 +2,6 @@
 
 import React from "react";
 import {
-  ServicesContainer,
   ServicesFormat,
   ServicesFormatH3,
   ServicesFormatH2,

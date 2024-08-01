@@ -7,6 +7,7 @@ import logo from './assets/logo.svg';
 import Hero from "./ui/components/organisms/Hero/Hero";
 import About from "./ui/components/organisms/About/About";
 import MyServicesList from "./ui/components/organisms/MyServices/MyServicesList";
+import Services from './assets/services_data';
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
         resumeText="Mis Trabajos"
       />
       <About></About>
-      <MyServicesList />
+      <MyServicesList services={Services} />
     </ThemeProvider>
   );
 }
