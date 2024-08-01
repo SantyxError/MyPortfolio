@@ -8,6 +8,7 @@ import Hero from "./ui/components/organisms/Hero/Hero";
 import About from "./ui/components/organisms/About/About";
 import MyServicesList from "./ui/components/organisms/MyServices/MyServicesList";
 import Services from './assets/services_data';
+import MyWorksList from "./ui/components/organisms/MyWorkList/MyWorksList";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       />
       <About></About>
       <MyServicesList services={Services} />
+      <MyWorksList></MyWorksList>
     </ThemeProvider>
   );
 }
