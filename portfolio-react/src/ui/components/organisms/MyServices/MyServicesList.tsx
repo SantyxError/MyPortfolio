@@ -10,17 +10,17 @@ interface MyServicesListProps {
 
 const MyServicesList: React.FC<MyServicesListProps> = ({ services = [] }) => {
   return (
-    <Wrapper>
-       <Title text="Mis Servicios" image={theme_pattern}/>
+    <Wrapper id="services">
+      <Title text="Mis Servicios" image={theme_pattern} />
       <ServicesContainer>
-      {services.map((service, index) => (
-        <MyService
-          key={index}
-          s_no={service.s_no}
-          s_name={service.s_name}
-          s_desc={service.s_desc}
-        />
-      ))}
+        {services.map((service, index) => (
+          <MyService
+            key={index}
+            s_no={service.s_no}
+            s_name={service.s_name}
+            s_desc={service.s_desc}
+          />
+        ))}
       </ServicesContainer>
     </Wrapper>
   );

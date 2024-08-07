@@ -16,3 +16,15 @@ export const NavMenu = styled.ul`
   gap: ${({ theme }) => theme.spacing.xxxl};
   font-size: ${({ theme }) => theme.fontSize.xl};
 `;
+
+export const NavMenuItem = styled.li`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+`;
+
+export const NavMenuItemImg = styled.img`
+  display: flex;
+  margin: auto;
+`;

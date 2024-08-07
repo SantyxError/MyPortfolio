@@ -11,6 +11,7 @@ const COLOR = {
     color: ${({ theme }) => theme.color.white};
     border: 2px solid ${({ theme }) => theme.color.white};
     padding: ${({ theme }) => theme.spacing.m} ${({ theme }) => theme.spacing.l};
+    transition: color 0.3s;
   `,
   terciary: css`
     background-color: ${({ theme }) => theme.color.white};
@@ -29,6 +30,11 @@ export const Button = styled.button<{
   border-radius: ${({ theme }) => theme.borderRadius.xxxl};
   cursor: pointer;
 
+  &:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+  }
+
   ${({ variant }) =>
     variant === "primary" &&
     css`
@@ -42,6 +48,10 @@ export const Button = styled.button<{
     css`
       &:hover {
         border: 2px solid ${({ theme }) => theme.color.purple};
+        background: ${({ theme }) => theme.background.primary};
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: ${({ theme }) => theme.color.purple};
       }
     `}
 `;

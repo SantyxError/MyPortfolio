@@ -18,7 +18,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ connectText, resumeText }) => {
   return (
-    <Wrapper>
+    <Wrapper id="home">
       <HeroImage src={profile_img} alt="Profile Image" />
       <HeroH1>
         Soy<HeroSpan> Santiago Benito,</HeroSpan> desarrollador y diseñador

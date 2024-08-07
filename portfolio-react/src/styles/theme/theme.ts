@@ -6,6 +6,8 @@ interface DefaultTheme {
     black: string;
     purple: string;
     bone: string;
+    darkGrey: string;
+    grey: string;
   };
 
   background: {
@@ -87,7 +89,7 @@ interface DefaultTheme {
     xxl: string;
     xxxl: string;
     xxxxl: string;
-    xxxxxl: string
+    xxxxxl: string;
   };
 
   lineHeight: {
@@ -121,18 +123,20 @@ export const theme: DefaultTheme = {
     secondary: "#a34b37",
     white: "#ffffff",
     black: "#000000",
-    purple: '#B415FF',
-    bone: '#d4d4d4',
+    purple: "#B415FF",
+    bone: "#d4d4d4",
+    darkGrey: "#32323b",
+    grey: "#a0a0a0",
   },
 
   background: {
-    primary: 'linear-gradient(270deg, #df8908 10%, #b415ff 100%)',
-    secondary: 'linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%)',
-    terciary: 'linear-gradient(45deg, #3f0028, #582300)',
+    primary: "linear-gradient(270deg, #df8908 10%, #b415ff 100%)",
+    secondary: "linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%)",
+    terciary: "linear-gradient(45deg, #3f0028, #582300)",
   },
 
   fontFamily: {
-    primary: 'Outfit',
+    primary: "Outfit",
   },
 
   fontSize: {
@@ -148,23 +152,23 @@ export const theme: DefaultTheme = {
   },
 
   gradient: {
-    primary: "linear-gradient(180deg, rgba(253,250,243,1) 0%, rgba(243,226,208,1) 50%, rgba(162,132,124,1) 100%)",
-    secondary: 'linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%)'
-  
+    primary:
+      "linear-gradient(180deg, rgba(253,250,243,1) 0%, rgba(243,226,208,1) 50%, rgba(162,132,124,1) 100%)",
+    secondary: "linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%)",
   },
 
   spacing: {
-    none: '0',
-    xxs: '0.10rem',
-    xs: '0.25rem',
-    s: '0.5rem',
-    m: '1rem',
-    l: '1.5rem',
-    xl: '2rem',
-    xxl: '3rem',
-    xxxl: '4rem',
-    xxxxl: '5rem',
-    xxxxxl: '5.5rem'
+    none: "0",
+    xxs: "0.10rem",
+    xs: "0.25rem",
+    s: "0.5rem",
+    m: "1rem",
+    l: "1.5rem",
+    xl: "2rem",
+    xxl: "3rem",
+    xxxl: "4rem",
+    xxxxl: "5rem",
+    xxxxxl: "5.5rem",
   },
 
   borderRadius: {
@@ -174,7 +178,7 @@ export const theme: DefaultTheme = {
     l: "16px",
     xl: "24px",
     xxl: "35px",
-    xxxl: "50px"
+    xxxl: "50px",
   },
 
   border: {
@@ -187,41 +191,41 @@ export const theme: DefaultTheme = {
   },
 
   margin: {
-    none: '0',
-    xxs: '0.10rem',
-    xs: '0.25rem',
-    s: '0.5rem',
-    m: '1rem',
-    l: '1.5rem',
-    xl: '2rem',
-    xxl: '3rem',
-    xxxl: '4rem',
-    xxxxl: '5rem',
-    xxxxxl: '7rem',
+    none: "0",
+    xxs: "0.10rem",
+    xs: "0.25rem",
+    s: "0.5rem",
+    m: "1rem",
+    l: "1.5rem",
+    xl: "2rem",
+    xxl: "3rem",
+    xxxl: "4rem",
+    xxxxl: "5rem",
+    xxxxxl: "7rem",
   },
 
   lineHeight: {
-    xs: '1.2',
-    s: '1.4',
-    m: '1.6',
-    l: '1.8',
-    xl: '2',
-    xxl: '2.2',
-    xxxl: '2.6',
+    xs: "1.2",
+    s: "1.4",
+    m: "1.6",
+    l: "1.8",
+    xl: "2",
+    xxl: "2.2",
+    xxxl: "2.6",
   },
 
   boxShadow: {
-    xs: '0 1px 2px rgba(0, 0, 0, 0.1)',
-    s: '0 2px 4px rgba(0, 0, 0, 0.1)',
-    m: '0 4px 8px rgba(0, 0, 0, 0.2)',
-    l: '0 6px 12px rgba(0, 0, 0, 0.2)',
-    xl: '0 8px 16px rgba(0, 0, 0, 0.3)',
+    xs: "0 1px 2px rgba(0, 0, 0, 0.1)",
+    s: "0 2px 4px rgba(0, 0, 0, 0.1)",
+    m: "0 4px 8px rgba(0, 0, 0, 0.2)",
+    l: "0 6px 12px rgba(0, 0, 0, 0.2)",
+    xl: "0 8px 16px rgba(0, 0, 0, 0.3)",
   },
 
   opacity: {
-    light: '0.3',
-    medium: '0.6',
-    heavy: '0.9',
+    light: "0.3",
+    medium: "0.6",
+    heavy: "0.9",
   },
 
   mediaQueries: {

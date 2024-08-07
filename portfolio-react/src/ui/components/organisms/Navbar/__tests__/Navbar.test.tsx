@@ -5,7 +5,8 @@ import Navbar from "../Navbar";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../../../../../styles/theme";
 
-jest.mock("../../../atoms/Button/Button.styled", () => ({
+// Mock del botón
+jest.mock("../../../atoms/Button/Button", () => ({
   Button: ({
     children,
     onClick,
@@ -16,7 +17,6 @@ jest.mock("../../../atoms/Button/Button.styled", () => ({
 }));
 
 describe("Navbar Component", () => {
-  const logo = "path/to/logo.svg";
   const buttonText = "Conecta conmigo";
   const buttonVariant = "primary" as const;
   const handleClick = jest.fn();
@@ -25,8 +25,6 @@ describe("Navbar Component", () => {
     render(
       <ThemeProvider theme={theme}>
         <Navbar
-          logo={logo}
-          items={["Home", "Sobre mi", "Servicios", "Portfolio", "Contacto"]}
           buttonText={buttonText}
           buttonVariant={buttonVariant}
           onButtonClick={handleClick}
@@ -39,13 +37,7 @@ describe("Navbar Component", () => {
 
     expect(screen.getByAltText("Logo")).toBeInTheDocument();
 
-    const menuItems = [
-      "Home",
-      "Sobre mi",
-      "Servicios",
-      "Portfolio",
-      "Contacto",
-    ];
+    const menuItems = ["Home", "Sobre mi", "Servicios", "Portfolio", "Contact"];
     menuItems.forEach((item) => {
       expect(screen.getByText(item)).toBeInTheDocument();
     });

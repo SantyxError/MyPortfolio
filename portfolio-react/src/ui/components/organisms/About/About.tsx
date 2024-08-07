@@ -14,8 +14,8 @@ import theme_pattern from "../../../../assets/theme_pattern.svg";
 
 const About = () => {
   return (
-    <Wrapper>
-      <Title text="Sobre mí" image={theme_pattern}/>
+    <Wrapper id="about">
+      <Title text="Sobre mí" image={theme_pattern} />
       <AboutSections>
         <AboutLeft>
           <img src={profile_img} alt="Profile Image" />

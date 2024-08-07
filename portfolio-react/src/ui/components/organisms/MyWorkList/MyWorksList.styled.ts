@@ -27,7 +27,7 @@ export const MyWorkContainerImg = styled.img`
   &:hover {
     border: ${({ theme }) => theme.border.xxs} solid
       ${({ theme }) => theme.color.purple};
-    border-radius: 10px;
+    border-radius: ${({ theme }) => theme.borderRadius.m};
     transform: scale(1.1);
     transition: 0.4s;
   }
@@ -36,17 +36,21 @@ export const MyWorkContainerImg = styled.img`
 export const MyWorkShowMore = styled.div`
   display: flex;
   gap: ${({ theme }) => theme.spacing.l};
-  border-radius: 50px;
-  border: 2px solid white;
-  padding: 20px 60px;
-  font-size: 22px;
+  border-radius: ${({ theme }) => theme.borderRadius.xxxl};
+  border: ${({ theme }) => theme.border.xxs} solid
+    ${({ theme }) => theme.color.white};
+  padding: ${({ theme }) => theme.spacing.m}
+    ${({ theme }) => theme.spacing.xxxl};
+  font-size: ${({ theme }) => theme.fontSize.l};
   font-weight: 500;
-  margin-bottom: 80px;
+  margin-bottom: ${({ theme }) => theme.margin.xxxl};
   transition: 0.6s;
   cursor: pointer;
 
   &:hover {
-    gap: 30px;
+    gap: ${({ theme }) => theme.spacing.xxl};
     transition: 0.4s;
+    border: ${({ theme }) => theme.border.xxs} solid
+      ${({ theme }) => theme.color.purple};
   }
 `;

@@ -6,7 +6,8 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   gap: ${({ theme }) => theme.spacing.xxxxxl};
-  margin: ${({ theme }) => theme.margin.xxxxl} ${({ theme }) => theme.margin.xxxxxl};
+  margin: ${({ theme }) => theme.margin.xxxxl}
+    ${({ theme }) => theme.margin.xxxxxl};
 `;
 
 export const ServicesContainer = styled.div`

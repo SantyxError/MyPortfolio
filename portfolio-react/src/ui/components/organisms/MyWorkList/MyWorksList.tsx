@@ -1,7 +1,6 @@
 import React from "react";
 import Title from "../../atoms/Title/Title";
 import theme_pattern from "../../../../assets/theme_pattern.svg";
-import mywork_data from "../../../../assets/mywork_data";
 import arrow_icon from "../../../../assets/arrow_icon.svg";
 import {
   Wrapper,
@@ -10,19 +9,29 @@ import {
   MyWorkContainerImg,
 } from "./MyWorksList.styled";
 
-const MyWorksList = () => {
+type WorkData = {
+  id: number;
+  title: string;
+  w_img: string;
+};
+
+type MyWorksListProps = {
+  myWorkData: WorkData[];
+};
+
+const MyWorksList: React.FC<MyWorksListProps> = ({ myWorkData }) => {
   return (
-    <Wrapper>
+    <Wrapper id="work">
       <Title text="Mis últimos trabajos" image={theme_pattern} />
       <MyWorkContainer>
-        {mywork_data.map((work, index) => {
-          return <MyWorkContainerImg key={index} src={work.w_img} alt=" " />;
-        })}
+        {myWorkData.map((work, index) => (
+          <MyWorkContainerImg key={index} src={work.w_img} alt=" " />
+        ))}
       </MyWorkContainer>
       <MyWorkShowMore>
-          <p>Mostrar más</p>
-          <img src={arrow_icon} alt=""></img>
-        </MyWorkShowMore>
+        <p>Mostrar más</p>
+        <img src={arrow_icon} alt=""></img>
+      </MyWorkShowMore>
     </Wrapper>
   );
 };
