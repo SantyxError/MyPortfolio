@@ -1,6 +1,7 @@
 import React from "react";
 import {
   AboutLeft,
+  AboutLeftImg,
   AboutParagraph,
   AboutRight,
   AboutSections,
@@ -18,7 +19,7 @@ const About = () => {
       <Title text="Sobre mí" image={theme_pattern} />
       <AboutSections>
         <AboutLeft>
-          <img src={profile_img} alt="Profile Image" />
+          <AboutLeftImg src={profile_img} alt="Profile Image" />
         </AboutLeft>
         <AboutRight>
           <AboutParagraph>

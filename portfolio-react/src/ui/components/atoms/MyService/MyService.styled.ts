@@ -4,15 +4,17 @@ export const ServicesFormat = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: ${({ theme }) => theme.spacing.l};
-  padding: ${({ theme }) => theme.spacing.xxxl};
+  gap: ${({ theme }) => theme.spacing.s};
+  padding: ${({ theme }) => theme.spacing.xl}  ${({ theme }) => theme.spacing.xxl};;
   border-radius: ${({ theme }) => theme.borderRadius.l};
-  border: ${({ theme }) => theme.border.xxs} solid ${({ theme }) => theme.color.white};
+  border: ${({ theme }) => theme.border.xxs} solid
+    ${({ theme }) => theme.color.white};
   transition: 0.4s;
   cursor: pointer;
 
   &:hover {
-    border: ${({ theme }) => theme.border.xxs} solid ${({ theme }) => theme.color.purple};
+    border: ${({ theme }) => theme.border.xxs} solid
+      ${({ theme }) => theme.color.purple};
     background-image: ${({ theme }) => theme.background.terciary};
     transform: scale(1.05);
     transition: 0.4s;
@@ -20,14 +22,14 @@ export const ServicesFormat = styled.div`
 `;
 
 export const ServicesFormatH3 = styled.h3`
-  font-size: ${({ theme }) => theme.fontSize.xl};
+  font-size: ${({ theme }) => theme.fontSize.xxl};
   font-weight: 600;
 `;
 
 export const ServicesFormatH2 = styled.h2`
-  font-size: ${({ theme }) => theme.fontSize.xxl};
+  font-size: ${({ theme }) => theme.fontSize.xxxl};
   font-weight: 800;
-  background: ${({ theme }) => theme.background.primary};
+  background: ${({ theme }) => theme.background.cuaternary};
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -36,7 +38,7 @@ export const ServicesFormatH2 = styled.h2`
 export const ServicesFormatP = styled.p`
   font-size: ${({ theme }) => theme.fontSize.xl};
   color: ${({ theme }) => theme.color.bone};
-  line-height:  ${({ theme }) => theme.lineHeight.m};
+  line-height: ${({ theme }) => theme.lineHeight.m};
   max-width: 300px;
 `;
 
@@ -44,4 +46,8 @@ export const ServicesReadmore = styled.div`
   display: flex;
   align-items: center;
   gap: ${({ theme }) => theme.spacing.l};
+`;
+
+export const ServicesReadmoreText = styled.p`
+  font-size: ${({ theme }) => theme.fontSize.xl};
 `;

@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: ${({ theme }) => theme.spacing.xl};
+  gap: ${({ theme }) => theme.spacing.xxxl};
   margin: ${({ theme }) => theme.margin.xxl}
     ${({ theme }) => theme.margin.xxxxxl};
 `;
@@ -39,6 +39,10 @@ export const AboutLeft = styled.div`
   justify-content: center;
   align-items: center;
   width: 40%;
+`;
+export const AboutLeftImg = styled.img`
+  border-radius: ${({ theme }) => theme.borderRadius.m};
+  height: 100%;
 `;
 
 export const AboutRight = styled.div`

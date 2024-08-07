@@ -36,7 +36,7 @@ describe("Navbar Component", () => {
 
     expect(screen.getByAltText("Logo")).toBeInTheDocument();
 
-    const menuItems = ["Home", "Sobre mi", "Servicios", "Portfolio", "Contact"];
+    const menuItems = ["Home", "Sobre mi", "Servicios", "Portfolio", "Contacto"];
     menuItems.forEach((item) => {
       expect(screen.getByText(item)).toBeInTheDocument();
     });

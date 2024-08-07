@@ -23,25 +23,28 @@ export const ContactLeft = styled.div`
 export const ContactLeftParagraph = styled.div`
   max-width: 550px;
   color: ${({ theme }) => theme.color.bone};
-  font-size: 20px;
+  font-size: ${({ theme }) => theme.fontSize.l};
   line-height: ${({ theme }) => theme.lineHeight.l};
 `;
 
 export const ContactDetails = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${({ theme }) => theme.spacing.l};
+  gap: ${({ theme }) => theme.spacing.s};
   color: ${({ theme }) => theme.color.bone};
-  font-size: ${({ theme }) => theme.fontSize.xl};
+  font-size: ${({ theme }) => theme.fontSize.l};
+  margin-top: ${({ theme }) => theme.margin.m};
 `;
 
 export const ContactDetail = styled.div`
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: ${({ theme }) => theme.spacing.l};
 `;
 
-export const ContactDetailImg = styled.img``;
+export const ContactDetailImg = styled.img`
+  width: 25px;
+`;
 
 export const ContactRight = styled.form`
   display: flex;
@@ -52,7 +55,7 @@ export const ContactRight = styled.form`
 
 export const ContactHtmlForm = styled.label`
   color: ${({ theme }) => theme.color.bone};
-  font-size: 20px;
+  font-size: ${({ theme }) => theme.fontSize.l};
   font-weight: 500;
 `;
 
@@ -60,12 +63,12 @@ export const ContactHtmlFormInput = styled.input`
   color: #a0a0a0;
   border: none;
   width: 45rem;
-  height: 78px;
+  height: ${({ theme }) => theme.spacing.xxxl};
   padding-left: ${({ theme }) => theme.spacing.m};
-  border-radius: 4px;
+  border-radius: ${({ theme }) => theme.borderRadius.xs};
   background: ${({ theme }) => theme.color.darkGrey};
   font-family: ${({ theme }) => theme.fontFamily.primary};
-  font-size: 20px;
+  font-size: ${({ theme }) => theme.fontSize.xl};
 `;
 
 export const ContactHtmlFormTextArea = styled.textarea`

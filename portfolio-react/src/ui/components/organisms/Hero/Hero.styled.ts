@@ -8,13 +8,16 @@ export const Wrapper = styled.div`
 `;
 
 export const HeroImage = styled.img`
-  margin-top: 150px;
+  margin-top: 2rem;
+  width: 240px;
+  height: auto;
+
 `;
 
 export const HeroH1 = styled.h1`
   text-align: center;
   width: 70%;
-  font-size: ${({ theme }) => theme.fontSize.xxxxxl};
+  font-size: ${({ theme }) => theme.fontSize.xxxxxxl};
   font-weight: 600;
 `;
 

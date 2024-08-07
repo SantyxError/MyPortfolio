@@ -5,6 +5,12 @@ export const SkillWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 
 export const SkillImageContainer = styled.div`
@@ -18,11 +24,19 @@ export const SkillImageContainer = styled.div`
   border: ${({ theme }) => theme.border.xs} solid;
   border-image-slice: 1;
   border-image-source: ${({ theme }) => theme.background.secondary};
+  transition: transform 0.3s ease-in-out;
+
+  ${SkillWrapper}:hover & {
+    transform: scale(1.1);
+  }
 `;
 
 export const SkillImage = styled.img`
   width: 3.4rem;
   height: 3.4rem;
+  transition: transform 0.3s ease-in-out; 
+  ${SkillWrapper}:hover & {
+    transform: scale(1.1); 
 `;
 
 export const SkillText = styled.p`

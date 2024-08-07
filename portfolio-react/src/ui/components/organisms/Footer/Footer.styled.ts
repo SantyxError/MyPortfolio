@@ -23,7 +23,7 @@ export const FooterTopLeftImg = styled.img`
 
 export const FooterTopLeftParagraph = styled.p`
   font-size: ${({ theme }) => theme.fontSize.l};
-  line-height: ${({ theme }) => theme.lineHeight.l};
+  line-height: ${({ theme }) => theme.lineHeight.m};
   max-width: 400px;
 `;
 
@@ -40,7 +40,7 @@ export const FooterEmailInput = styled.input`
   outline: none;
   border: none;
   background: transparent;
-  color: ${({ theme }) => theme.color.grey}
+  color: ${({ theme }) => theme.color.grey};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.l};
 

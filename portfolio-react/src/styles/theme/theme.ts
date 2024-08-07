@@ -14,6 +14,7 @@ interface DefaultTheme {
     primary: string;
     secondary: string;
     terciary: string;
+    cuaternary: string;
   };
 
   fontFamily: {
@@ -30,6 +31,9 @@ interface DefaultTheme {
     xxxl: string;
     xxxxl: string;
     xxxxxl: string;
+    xxxxxxl: string;
+    xxxxxxxl: string;
+    xxxxxxxxl: string;
   };
 
   gradient: {
@@ -133,6 +137,7 @@ export const theme: DefaultTheme = {
     primary: "linear-gradient(270deg, #df8908 10%, #b415ff 100%)",
     secondary: "linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%)",
     terciary: "linear-gradient(45deg, #3f0028, #582300)",
+    cuaternary: "linear-gradient(270deg, #df8908 50%, #b415ff 100%)",
   },
 
   fontFamily: {
@@ -144,11 +149,14 @@ export const theme: DefaultTheme = {
     s: "12px",
     m: "14px",
     l: "16px",
-    xl: "24px",
-    xxl: "35px",
-    xxxl: "50px",
-    xxxxl: "80px",
-    xxxxxl: "90px",
+    xl: "20px",
+    xxl: "24px",
+    xxxl: "35px",
+    xxxxl: "42px",
+    xxxxxl: "50px",
+    xxxxxxl: "65px",
+    xxxxxxxl: "80px",
+    xxxxxxxxl: "90px",
   },
 
   gradient: {
