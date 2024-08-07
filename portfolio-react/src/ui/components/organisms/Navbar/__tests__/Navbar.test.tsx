@@ -5,7 +5,6 @@ import Navbar from "../Navbar";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../../../../../styles/theme";
 
-// Mock del botón
 jest.mock("../../../atoms/Button/Button", () => ({
   Button: ({
     children,

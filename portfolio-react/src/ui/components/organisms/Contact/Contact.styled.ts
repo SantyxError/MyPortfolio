@@ -43,7 +43,7 @@ export const ContactDetail = styled.div`
 
 export const ContactDetailImg = styled.img``;
 
-export const ContactRight = styled.div`
+export const ContactRight = styled.form`
   display: flex;
   flex-direction: column;
   align-items: start;

@@ -22,7 +22,6 @@ describe("MyService", () => {
       </ThemeProvider>
     );
 
-    // Check if the component renders the provided props
     expect(screen.getByText(mockService.s_no)).toBeInTheDocument();
     expect(screen.getByText(mockService.s_name)).toBeInTheDocument();
     expect(screen.getByText(mockService.s_desc)).toBeInTheDocument();

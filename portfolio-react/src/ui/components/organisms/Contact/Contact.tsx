@@ -20,7 +20,38 @@ import {
   ContactHtmlFormTextArea,
 } from "./Contact.styled";
 
-function Contact() {
+const Contact: React.FC = () => {
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+
+    formData.append("access_key", "29c6498e-dd0d-40d1-b6e4-2b256a75a7bd");
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: json,
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert("El mensaje se ha enviado con éxito");
+      } else {
+        alert("Error al enviar el mensaje");
+      }
+    } catch (error) {
+      console.error("Fetch error:", error);
+    }
+  };
+
   return (
     <Wrapper id="contact">
       <Title text="Estamos en contacto" image={theme_pattern} />
@@ -47,30 +78,33 @@ function Contact() {
             </ContactDetail>
           </ContactDetails>
         </ContactLeft>
-        <ContactRight>
+        <ContactRight onSubmit={onSubmit}>
           <ContactHtmlForm>Tu Nombre</ContactHtmlForm>
           <ContactHtmlFormInput
             type="text"
             placeholder="Introduce tu nombre"
             name="name"
+            required
           />
           <ContactHtmlForm>Tu Email</ContactHtmlForm>
           <ContactHtmlFormInput
-            type="text"
+            type="email"
             placeholder="Introduce tu email"
             name="email"
+            required
           />
           <ContactHtmlForm>Escribe tu mensaje aquí</ContactHtmlForm>
           <ContactHtmlFormTextArea
-            name="messaje"
+            name="message"
             rows={8}
             placeholder="Introduce tu mensaje"
+            required
           />
           <Button variant="primary">Enviar mensaje</Button>
         </ContactRight>
       </ContactSection>
     </Wrapper>
   );
-}
+};
 
 export default Contact;
