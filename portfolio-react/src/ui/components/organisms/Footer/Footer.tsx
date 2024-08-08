@@ -15,7 +15,7 @@ import {
   StyledHr,
   Wrapper,
 } from "./Footer.styled";
-import footer_logo from "../../../../assets/footer_logo.svg";
+import footer_logo from "../../../../assets/logo_portfolio.svg";
 import user_icon from "../../../../assets/user_icon.svg";
 import { Button } from "../../atoms/Button/Button.styled";
 
@@ -30,9 +30,8 @@ const Footer: React.FC<FooterProps> = ({ connectText }) => {
         <FooterTopLeft>
           <FooterTopLeftImg src={footer_logo} alt="Footer Logo" />
           <FooterTopLeftParagraph>
-            I'm currently available to take on new projects, so feel free to
-            send me a message about anything that you want me to work on. You
-            can contact anytime.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+            molestie dui turpis, ac malesuada mauris convallis ut.
           </FooterTopLeftParagraph>
         </FooterTopLeft>
         <FooterTopRight>
@@ -50,12 +49,13 @@ const Footer: React.FC<FooterProps> = ({ connectText }) => {
       <StyledHr />
       <FooterBottom>
         <FooterBottomLeft>
-          © {new Date().getFullYear()} Santiago Benito. All rights reserved.
+          © {new Date().getFullYear()} Santiago Benito. Todos los derechos
+          reservados.
         </FooterBottomLeft>
         <FooterBottomRight>
-          <p>Terms of Service</p>
-          <p>Privacy Policy</p>
-          <p>Connect with me</p>
+          <p>Terminos de servicio</p>
+          <p>Política de privacidad</p>
+          <p>Conecta conmigo</p>
         </FooterBottomRight>
       </FooterBottom>
     </Wrapper>

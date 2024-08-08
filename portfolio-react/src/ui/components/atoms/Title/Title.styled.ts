@@ -10,6 +10,11 @@ export const TitleText = styled.h1`
     ${({ theme }) => theme.spacing.xl};
   font-size: ${({ theme }) => theme.fontSize.xxxxxxl};
   font-weight: 600;
+
+  ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
+    font-size: 50px;
+    padding: 0;
+  }
 `;
 
 export const TitleImg = styled.img`
@@ -17,4 +22,9 @@ export const TitleImg = styled.img`
   bottom: ${({ theme }) => theme.spacing.none};
   right: ${({ theme }) => theme.spacing.none};
   z-index: -1;
+
+  ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
+    width: 130px;
+    right: -20px;
+  }
 `;

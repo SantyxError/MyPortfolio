@@ -41,6 +41,12 @@ export const Button = styled.button<{
       &:hover {
         box-shadow: inset 0 0 0 2px white;
       }
+
+      ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
+        font-size: 18px;
+        font-weight: 500;
+        gap: 16px;
+      }
     `}
 
   ${({ variant }) =>
@@ -52,6 +58,12 @@ export const Button = styled.button<{
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         color: ${({ theme }) => theme.color.purple};
+      }
+
+      ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
+        font-size: 18px;
+        font-weight: 500;
+        gap: 16px;
       }
     `}
 `;

@@ -23,12 +23,9 @@ const About = () => {
         </AboutLeft>
         <AboutRight>
           <AboutParagraph>
-            <Paragraph text="Apasionado programador con un profundo amor por el mundo de la tecnología y la resolución creativa de problemas. He tenido el privilegio de trabajar en proyectos emocionantes y desafiantes que han moldeado mi habilidad y enfoque en esta industria en constante evolución." />
-            <Paragraph text="Mi día a día gira en torno a Java o React y me especializo en desarrollo front-end/back-end. Siempre estoy emocionado por enfrentar nuevos desafíos y encontrar formas creativas de abordarlos." />
-            <Paragraph text="Además de mis habilidades técnicas, creo firmemente en el poder del trabajo en equipo y la colaboración. He tenido la oportunidad de trabajar con equipos diversos y multidisciplinarios, donde he aprendido la importancia de la comunicación efectiva y el intercambio de conocimientos." />
-            <Paragraph text="Mi pasión por mantenerme al tanto de las últimas tendencias y avances en la industria me impulsa a continuar aprendiendo y creciendo. Siempre estoy buscando nuevos desafíos que me permitan aplicar mis habilidades y aportar valor significativo." />
-            <Paragraph text="Si algo de esto te interesa, ¡me encantaría conectar contigo!" />
-          </AboutParagraph>
+            <Paragraph text="Donec ullamcorper mollis aliquet. Integer venenatis ligula varius, viverra urna et, scelerisque erat. Nulla laoreet molestie egestas. Integer consectetur tellus ut odio bibendum, et congue arcu convallis. Sed at imperdiet sem, et tempus sem. Praesent id metus velit. In vestibulum nisi nec aliquet pretium. Fusce mollis lorem sit amet orci tempor, auctor tempus tortor lobortis. Ut justo purus, interdum nec molestie sit amet, luctus et odio. Quisque tempor feugiat mauris in hendrerit. Nunc auctor convallis metus, ut posuere ex lobortis facilisis." />
+            <Paragraph text="Vivamus ut aliquam dolor, at elementum ex. Proin fermentum lacus quis nunc venenatis, sollicitudin iaculis ipsum ultrices. Curabitur ac velit mauris. Maecenas sed orci non velit dictum ultrices non eget lorem. Etiam malesuada risus eu mauris porttitor, eget sodales urna sodales. Etiam ultrices magna sit amet consequat semper. Aliquam fermentum odio eget enim hendrerit, quis aliquam sapien finibus." />
+           </AboutParagraph>
         </AboutRight>
       </AboutSections>
       <SkillsList />

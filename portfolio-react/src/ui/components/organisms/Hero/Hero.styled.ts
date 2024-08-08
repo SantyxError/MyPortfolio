@@ -11,7 +11,10 @@ export const HeroImage = styled.img`
   margin-top: 2rem;
   width: 240px;
   height: auto;
-
+  border-radius: 50%;
+  ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
+    width: 260px;
+  }
 `;
 
 export const HeroH1 = styled.h1`
@@ -19,6 +22,12 @@ export const HeroH1 = styled.h1`
   width: 70%;
   font-size: ${({ theme }) => theme.fontSize.xxxxxxl};
   font-weight: 600;
+
+  ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
+    margin-top: 50px;
+    width: 90%;
+    font-size: 50px;
+  }
 `;
 
 export const HeroSpan = styled.span`
@@ -33,6 +42,13 @@ export const HeroP = styled.p`
   width: 50%;
   font-size: ${({ theme }) => theme.fontSize.xl};
   line-height: ${({ theme }) => theme.lineHeight.l};
+
+  ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
+    margin: 10px 0;
+    width: 60%;
+    font-size: 18px;
+    line-height: ${({ theme }) => theme.lineHeight.m};
+  }
 `;
 
 export const HeroAction = styled.div`
@@ -42,4 +58,9 @@ export const HeroAction = styled.div`
   font-size: ${({ theme }) => theme.fontSize.xl};
   font-weight: 500;
   margin-bottom: ${({ theme }) => theme.margin.xxxl};
+
+  ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
+    margin-bottom: 50px;
+    gap: 25px;
+  }
 `;

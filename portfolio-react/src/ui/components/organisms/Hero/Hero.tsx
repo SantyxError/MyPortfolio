@@ -1,15 +1,14 @@
 import React from "react";
-import profile_img from "../../../../assets/profile_img.svg";
+import profile_img from "../../../../assets/profileImage.jpg";
 import {
-    HeroAction,
+  HeroAction,
   HeroH1,
   HeroImage,
   HeroP,
   HeroSpan,
   Wrapper,
 } from "./Hero.styled";
-import { Button } from "../../atoms/Button/Button.styled"; 
-
+import { Button } from "../../atoms/Button/Button.styled";
 
 interface HeroProps {
   connectText: string;
@@ -30,10 +29,14 @@ const Hero: React.FC<HeroProps> = ({ connectText, resumeText }) => {
         nuevos desafíos y encontrar formas creativas de abordarlos.
       </HeroP>
       <HeroAction>
-        <Button variant="primary" onClick={() => console.log('Connect clicked')}>
+        <Button
+          variant="primary"
+          onClick={() => console.log("Connect clicked")}>
           {connectText}
         </Button>
-        <Button variant="secondary" onClick={() => console.log('Resume clicked')}>
+        <Button
+          variant="secondary"
+          onClick={() => console.log("Resume clicked")}>
           {resumeText}
         </Button>
       </HeroAction>

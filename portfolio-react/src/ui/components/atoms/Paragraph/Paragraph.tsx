@@ -6,8 +6,8 @@ interface ParagraphProps {
 }
 
 const Paragraph: React.FC<ParagraphProps> = ({ text }) => {
-  if (text.trim() === "") {
-    return null;
+  if (!text) {
+    return;
   }
   return <ParagraphText data-testid="paragraph">{text}</ParagraphText>;
 };

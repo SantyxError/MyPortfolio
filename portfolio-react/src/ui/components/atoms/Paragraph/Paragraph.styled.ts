@@ -7,4 +7,11 @@ export const ParagraphText = styled.p`
     ${({ theme }) => theme.spacing.none} ${({ theme }) => theme.spacing.m}
     ${({ theme }) => theme.spacing.none};
   text-align: justify;
+
+  ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
+
+    gap: 20px;
+    font-size: 18px;
+    line-height: 24px;
+  }
 `;

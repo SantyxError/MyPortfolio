@@ -54,14 +54,13 @@ const Contact: React.FC = () => {
 
   return (
     <Wrapper id="contact">
-      <Title text="Estamos en contacto" image={theme_pattern} />
+      <Title text="Contacto" image={theme_pattern} />
       <ContactSection>
         <ContactLeft>
           <Subtitle text={"¡Hablemos!"} />
           <ContactLeftParagraph>
-            I'm currently available to take on new projects, so feel free to
-            send me a message about anything that you want me to work on. You
-            can contact anytime.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+            molestie dui turpis, ac malesuada mauris convallis ut.
           </ContactLeftParagraph>
           <ContactDetails>
             <ContactDetail>

@@ -8,6 +8,7 @@ import {
   ServicesFormatP,
   ServicesReadmore,
   ServicesReadmoreText,
+  ServicesReadmoreImg,
 } from "./MyService.styled";
 import arrow_icon from "../../../../assets/arrow_icon.svg";
 
@@ -25,7 +26,7 @@ const MyService: React.FC<MyServiceProps> = ({ s_no, s_name, s_desc }) => {
       <ServicesFormatP>{s_desc}</ServicesFormatP>
       <ServicesReadmore>
         <ServicesReadmoreText>Leer más</ServicesReadmoreText>
-        <img src={arrow_icon} alt="Leer más" />
+        <ServicesReadmoreImg src={arrow_icon} alt="Leer más" />
       </ServicesReadmore>
     </ServicesFormat>
   );
