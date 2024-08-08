@@ -1,23 +1,19 @@
-import { Meta, Story } from '@storybook/react';
-import Hero from './Hero';
-import { theme } from '../src/styles/theme';
+import { Meta, StoryObj } from "@storybook/react";
+import Hero from "./Hero";
 
 const meta: Meta<typeof Hero> = {
   component: Hero,
-  title: 'Organisms/Hero',
-  tags: ['autodocs'],
+  title: "Organisms/Hero",
+  tags: ["autodocs"],
 };
 
 export default meta;
 
-type HeroProps = {
-  connectText: string;
-  resumeText: string;
-};
+type Story = StoryObj<typeof Hero>;
 
-export const Default: Story<HeroProps> = {
+export const Primary: Story = {
   args: {
-    connectText: 'Conecta conmigo',
-    resumeText: 'Mis Trabajos',
+    connectText: "Conecta conmigo",
+    resumeText: "Mis Trabajos",
   },
 };

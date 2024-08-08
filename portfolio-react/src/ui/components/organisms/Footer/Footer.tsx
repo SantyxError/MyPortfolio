@@ -1,4 +1,3 @@
-// src/ui/components/organisms/Footer/Footer.tsx
 import React from "react";
 import {
   FooterBottom,

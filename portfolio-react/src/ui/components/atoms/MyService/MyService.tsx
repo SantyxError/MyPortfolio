@@ -1,5 +1,3 @@
-// src/ui/components/atoms/MyService/MyService.tsx
-
 import React from "react";
 import {
   ServicesFormat,

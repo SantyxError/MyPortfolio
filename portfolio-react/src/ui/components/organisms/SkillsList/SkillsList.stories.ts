@@ -1,7 +1,5 @@
-// SkillsList.stories.tsx
-import React from 'react';
-import { Meta, Story, StoryObj } from '@storybook/react';
-import SkillsList from './SkillsList';
+import { Meta, StoryObj } from "@storybook/react";
+import SkillsList from "./SkillsList";
 
 const meta: Meta<typeof SkillsList> = {
   title: "organisms/SkillsList",
@@ -11,5 +9,4 @@ const meta: Meta<typeof SkillsList> = {
 export default meta;
 type Story = StoryObj<typeof SkillsList>;
 
-export const Primary: Story = {
-};
+export const Primary: Story = {};

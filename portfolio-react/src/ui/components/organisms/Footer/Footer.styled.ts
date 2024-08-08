@@ -75,7 +75,7 @@ export const FooterTopRight = styled.div`
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
     flex-direction: column;
     align-items: start;
-    gap: 20px;
+    gap: ${({ theme }) => theme.spacing.l};
   }
 `;
 
@@ -87,7 +87,7 @@ export const FooterBottom = styled.div`
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
     display: flex;
     flex-direction: column-reverse;
-    margin-bottom: 50px;
+    margin-bottom: ${({ theme }) => theme.margin.xxxxl};
   }
 `;
 

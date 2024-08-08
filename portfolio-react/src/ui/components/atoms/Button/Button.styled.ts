@@ -43,9 +43,9 @@ export const Button = styled.button<{
       }
 
       ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-        font-size: 18px;
+        font-size: ${({ theme }) => theme.fontSize.l};
         font-weight: 500;
-        gap: 16px;
+        gap: ${({ theme }) => theme.spacing.m};
       }
     `}
 
@@ -61,9 +61,9 @@ export const Button = styled.button<{
       }
 
       ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-        font-size: 18px;
+        font-size: ${({ theme }) => theme.fontSize.l};
         font-weight: 500;
-        gap: 16px;
+        gap: ${({ theme }) => theme.spacing.m};
       }
     `}
 `;

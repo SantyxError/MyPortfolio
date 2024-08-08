@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
 `;
 
 export const HeroImage = styled.img`
-  margin-top: 2rem;
+  margin-top: ${({ theme }) => theme.margin.xl};
   width: 240px;
   height: auto;
   border-radius: 50%;
@@ -24,9 +24,9 @@ export const HeroH1 = styled.h1`
   font-weight: 600;
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    margin-top: 50px;
+    margin-top: ${({ theme }) => theme.margin.xl};
     width: 90%;
-    font-size: 50px;
+    font-size: ${({ theme }) => theme.fontSize.xxxxxl};
   }
 `;
 
@@ -44,9 +44,9 @@ export const HeroP = styled.p`
   line-height: ${({ theme }) => theme.lineHeight.l};
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    margin: 10px 0;
+    margin: ${({ theme }) => theme.margin.m} ${({ theme }) => theme.margin.none};
     width: 60%;
-    font-size: 18px;
+    font-size: ${({ theme }) => theme.fontSize.xl};
     line-height: ${({ theme }) => theme.lineHeight.m};
   }
 `;
@@ -60,7 +60,7 @@ export const HeroAction = styled.div`
   margin-bottom: ${({ theme }) => theme.margin.xxxl};
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    margin-bottom: 50px;
-    gap: 25px;
+    margin-bottom: ${({ theme }) => theme.margin.xl};
+    gap: ${({ theme }) => theme.spacing.l};
   }
 `;

@@ -9,9 +9,8 @@ export const ParagraphText = styled.p`
   text-align: justify;
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-
-    gap: 20px;
-    font-size: 18px;
-    line-height: 24px;
+    gap: ${({ theme }) => theme.spacing.m};
+    font-size: ${({ theme }) => theme.fontSize.l};
+    line-height: ${({ theme }) => theme.lineHeight.m};
   }
 `;

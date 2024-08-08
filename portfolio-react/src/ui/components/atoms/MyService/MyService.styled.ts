@@ -23,8 +23,8 @@ export const ServicesFormat = styled.div`
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
     align-items: start;
-    gap: 10px;
-    padding: 18px;
+    gap:  ${({ theme }) => theme.spacing.s};
+    padding:  ${({ theme }) => theme.spacing.m}
     border-radius: ${({ theme }) => theme.borderRadius.s};
   }
 `;
@@ -34,7 +34,7 @@ export const ServicesFormatH3 = styled.h3`
   font-weight: 600;
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    font-size: 28px;
+    font-size: ${({ theme }) => theme.fontSize.xxl};
   }
 `;
 
@@ -47,7 +47,7 @@ export const ServicesFormatH2 = styled.h2`
   -webkit-text-fill-color: transparent;
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    font-size: 24px;
+    font-size: ${({ theme }) => theme.fontSize.xxxl};
   }
 `;
 
@@ -58,8 +58,8 @@ export const ServicesFormatP = styled.p`
   max-width: 100%;
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    font-size: 18px; 
-    line-height: 24px; 
+    font-size: ${({ theme }) => theme.fontSize.l};
+    ${({ theme }) => theme.lineHeight.s};
     max-width: 300px; /
   }
 `;
@@ -70,7 +70,7 @@ export const ServicesReadmore = styled.div`
   gap: ${({ theme }) => theme.spacing.l};
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    gap: 12px;
+    gap: ${({ theme }) => theme.spacing.m};
   }
 `;
 
@@ -78,12 +78,12 @@ export const ServicesReadmoreText = styled.p`
   font-size: ${({ theme }) => theme.fontSize.xl};
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    font-size: 14px;
+    font-size: ${({ theme }) => theme.fontSize.m};
   }
 `;
 
 export const ServicesReadmoreImg = styled.img`
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    width: 16px; 
+    width: 16px;
   }
 `;

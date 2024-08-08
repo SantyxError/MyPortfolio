@@ -11,36 +11,27 @@ export const Wrapper = styled.div`
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
     margin: ${({ theme }) => theme.margin.xl} ${({ theme }) => theme.margin.xl}; /* Ajusta los márgenes en dispositivos más pequeños */
-    gap: ${({ theme }) =>
-      theme.spacing.xxl}; /* Reduce el espacio entre los elementos */
+    gap: ${({ theme }) => theme.spacing.xxl};
   }
 `;
 
 export const MyWorkContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(
-    3,
-    1fr
-  ); /* Tres columnas para pantallas grandes */
+  grid-template-columns: repeat(3, 1fr);
   gap: ${({ theme }) => theme.spacing.xxl};
   margin-bottom: ${({ theme }) => theme.margin.l};
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    grid-template-columns: repeat(
-      2,
-      1fr
-    ); /* Dos columnas para pantallas más pequeñas */
-    gap: ${({ theme }) =>
-      theme.spacing.l}; /* Reduce el espacio entre los elementos */
-    margin-bottom: ${({ theme }) =>
-      theme.margin.xl}; /* Ajusta el margen en pantallas pequeñas */
+    grid-template-columns: repeat(2, 1fr);
+    gap: ${({ theme }) => theme.spacing.l};
+    margin-bottom: ${({ theme }) => theme.margin.xl};
   }
 `;
 
 export const MyWorkContainerImg = styled.img`
   box-sizing: border-box;
-  width: 100%; /* Ajusta la imagen para que ocupe el ancho del contenedor */
-  height: auto; /* Mantiene la relación de aspecto */
+  width: 100%;
+  height: auto;
   transition: 0.3;
   cursor: pointer;
 
@@ -76,11 +67,8 @@ export const MyWorkShowMore = styled.div`
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
     padding: ${({ theme }) => theme.spacing.s} ${({ theme }) => theme.spacing.l}; /* Ajusta el padding para pantallas pequeñas */
-    font-size: ${({ theme }) =>
-      theme.fontSize.m}; /* Ajusta el tamaño de la fuente */
-    gap: ${({ theme }) =>
-      theme.spacing.m}; /* Reduce el espacio entre los elementos */
-    margin-bottom: ${({ theme }) =>
-      theme.margin.l}; /* Ajusta el margen inferior */
+    font-size: ${({ theme }) => theme.fontSize.m};
+    gap: ${({ theme }) => theme.spacing.m};
+    margin-bottom: ${({ theme }) => theme.margin.l};
   }
 `;

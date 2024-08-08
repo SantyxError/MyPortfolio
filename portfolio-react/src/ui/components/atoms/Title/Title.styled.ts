@@ -12,8 +12,8 @@ export const TitleText = styled.h1`
   font-weight: 600;
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    font-size: 50px;
-    padding: 0;
+    font-size: ${({ theme }) => theme.fontSize.xxxxxl};
+    padding: ${({ theme }) => theme.spacing.none};
   }
 `;
 

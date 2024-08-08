@@ -6,8 +6,7 @@ interface SubtitleProps {
 }
 
 const Subtitle: React.FC<SubtitleProps> = ({ text }) => {
-  // Si el texto está vacío o solo contiene espacios, no renderiza nada
-  if (text.trim() === "") return null;
+  if (!text) return;
 
   return <SubtitleText>{text}</SubtitleText>;
 };

@@ -93,7 +93,7 @@ export const ContactRight = styled.form`
   gap: ${({ theme }) => theme.spacing.l};
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    margin-top: 30px;
+    margin-top: ${({ theme }) => theme.spacing.xl};
     align-items: center;
     width: 100%;
   }
@@ -134,11 +134,11 @@ export const ContactHtmlFormTextArea = styled.textarea`
   border-radius: ${({ theme }) => theme.borderRadius.xs};
   background: ${({ theme }) => theme.color.darkGrey};
   font-family: ${({ theme }) => theme.fontFamily.primary};
-  font-size: 20px;
+  font-size: ${({ theme }) => theme.fontSize.xl};
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
     font-size: ${({ theme }) => theme.fontSize.m};
     height: ${({ theme }) => theme.spacing.xxxxxxl};
-    margin-bottom: 20px;
+    margin-bottom: ${({ theme }) => theme.margin.m};
   }
 `;

@@ -8,7 +8,7 @@ const SkillsList = () => {
     <SkillsListContainer data-testid="skills-list-container">
       <Subtitle text="Mis Skills" />
       <SkillsListWrapper data-testid="skills-list-wrapper">
-         <Skill
+        <Skill
           imageSrc="src\assets\skills\html5-original-wordmark.svg"
           altText="HTML"
           text="HTML"

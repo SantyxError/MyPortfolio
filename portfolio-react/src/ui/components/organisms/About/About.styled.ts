@@ -10,8 +10,9 @@ export const Wrapper = styled.div`
     ${({ theme }) => theme.margin.xxxxxl};
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    margin: 50px 70px;
-    gap: 80px;
+    margin: ${({ theme }) => theme.margin.xxl}
+      ${({ theme }) => theme.margin.xxxxl};
+    gap: ${({ theme }) => theme.spacing.xl};
     align-items: start;
   }
 `;
@@ -55,4 +56,3 @@ export const AboutParagraph = styled.div`
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing.s};
 `;
-

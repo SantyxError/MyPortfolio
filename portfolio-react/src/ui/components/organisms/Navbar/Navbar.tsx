@@ -67,7 +67,7 @@ const Navbar: React.FC<NavbarProps> = ({
             duration={500}
             onClick={() => {
               setMenu("home");
-              closeMenu(); // Cierra el menú al hacer clic
+              closeMenu();
             }}>
             <p>Home</p>
           </Link>
@@ -80,7 +80,7 @@ const Navbar: React.FC<NavbarProps> = ({
             duration={500}
             onClick={() => {
               setMenu("about");
-              closeMenu(); // Cierra el menú al hacer clic
+              closeMenu();
             }}>
             <p>Sobre mi</p>
           </Link>
@@ -93,7 +93,7 @@ const Navbar: React.FC<NavbarProps> = ({
             duration={500}
             onClick={() => {
               setMenu("services");
-              closeMenu(); // Cierra el menú al hacer clic
+              closeMenu();
             }}>
             <p>Servicios</p>
           </Link>
@@ -108,7 +108,7 @@ const Navbar: React.FC<NavbarProps> = ({
             duration={500}
             onClick={() => {
               setMenu("work");
-              closeMenu(); // Cierra el menú al hacer clic
+              closeMenu();
             }}>
             <p>Portfolio</p>
           </Link>
@@ -121,7 +121,7 @@ const Navbar: React.FC<NavbarProps> = ({
             duration={500}
             onClick={() => {
               setMenu("contact");
-              closeMenu(); // Cierra el menú al hacer clic
+              closeMenu();
             }}>
             <p>Contacto</p>
           </Link>

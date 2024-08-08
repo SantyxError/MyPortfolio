@@ -34,12 +34,13 @@ export const SkillImageContainer = styled.div`
 export const SkillImage = styled.img`
   width: 3.4rem;
   height: 3.4rem;
-  transition: transform 0.3s ease-in-out; 
+  transition: transform 0.3s ease-in-out;
   ${SkillWrapper}:hover & {
-    transform: scale(1.1); 
+    transform: scale(1.1);
+  }
 `;
 
 export const SkillText = styled.p`
-  margin: 0;
+  margin: ${({ theme }) => theme.margin.none};
   width: 5rem;
 `;

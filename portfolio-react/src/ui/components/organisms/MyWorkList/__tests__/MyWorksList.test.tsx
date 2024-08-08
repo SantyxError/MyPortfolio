@@ -5,7 +5,6 @@ import MyWorksList from "../MyWorksList";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../../../../../styles/theme";
 
-// Simulación de datos de trabajo
 const mockMyWorkData = [
   { id: 1, title: "Project 1", w_img: "image1.png" },
   { id: 2, title: "Project 2", w_img: "image2.png" },
