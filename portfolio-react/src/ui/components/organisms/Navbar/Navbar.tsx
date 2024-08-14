@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "../../atoms/Button/Button";
 import {
   Wrapper,
@@ -15,6 +15,7 @@ import logo from "../../../../assets/logo_portfolio.svg";
 import menu_open from "../../../../assets/menu_open.svg";
 import menu_close from "../../../../assets/menu_close.svg";
 import { Link } from "react-scroll";
+import Text from "../../atoms/Text/Text";
 
 interface NavbarProps {
   buttonVariant: "primary" | "secondary" | "terciary";
@@ -69,7 +70,9 @@ const Navbar: React.FC<NavbarProps> = ({
               setMenu("home");
               closeMenu();
             }}>
-            <p>Home</p>
+            <Text as="p" size="large">
+              Home
+            </Text>
           </Link>
           {menu === "home" ? <NavMenuItemImg src={underline} alt="" /> : null}
         </NavMenuItem>
@@ -82,7 +85,9 @@ const Navbar: React.FC<NavbarProps> = ({
               setMenu("about");
               closeMenu();
             }}>
-            <p>Sobre mi</p>
+            <Text as="p" size="large">
+              Sobre mí
+            </Text>
           </Link>
           {menu === "about" ? <NavMenuItemImg src={underline} alt="" /> : null}
         </NavMenuItem>
@@ -95,7 +100,9 @@ const Navbar: React.FC<NavbarProps> = ({
               setMenu("services");
               closeMenu();
             }}>
-            <p>Servicios</p>
+            <Text as="p" size="large">
+              Servicios
+            </Text>
           </Link>
           {menu === "services" ? (
             <NavMenuItemImg src={underline} alt="" />
@@ -110,7 +117,9 @@ const Navbar: React.FC<NavbarProps> = ({
               setMenu("work");
               closeMenu();
             }}>
-            <p>Portfolio</p>
+            <Text as="p" size="large">
+              Mis trabajos
+            </Text>
           </Link>
           {menu === "work" ? <NavMenuItemImg src={underline} alt="" /> : null}
         </NavMenuItem>
@@ -123,7 +132,9 @@ const Navbar: React.FC<NavbarProps> = ({
               setMenu("contact");
               closeMenu();
             }}>
-            <p>Contacto</p>
+            <Text as="p" size="large">
+              Contacto
+            </Text>
           </Link>
           {menu === "contact" ? (
             <NavMenuItemImg src={underline} alt="" />

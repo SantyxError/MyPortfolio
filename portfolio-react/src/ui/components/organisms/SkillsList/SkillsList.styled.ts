@@ -5,6 +5,7 @@ export const SkillsListContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
+  gap: ${({ theme }) => theme.spacing.l};
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
     gap: ${({ theme }) => theme.spacing.xl};
   }
@@ -13,7 +14,7 @@ export const SkillsListContainer = styled.div`
 export const SkillsListWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  gap: ${({ theme }) => theme.spacing.xxl};
+  gap: ${({ theme }) => theme.spacing.xl};
   max-width: 1200px;
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {

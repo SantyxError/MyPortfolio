@@ -22,7 +22,9 @@ export const FooterTop = styled.div`
   }
 `;
 
-export const FooterTopLeft = styled.div``;
+export const FooterTopLeft = styled.div`
+  width: 30%;
+`;
 
 export const FooterTopLeftImg = styled.img`
   width: 10rem;

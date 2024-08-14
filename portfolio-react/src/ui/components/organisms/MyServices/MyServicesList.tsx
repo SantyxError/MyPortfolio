@@ -1,11 +1,11 @@
 import React from "react";
-import MyService, { MyServiceProps } from "../../atoms/MyService/MyService";
+import Card, { CardProps } from "../../atoms/Card/Card";
 import { ServicesContainer, Wrapper } from "./MyServicesList.styled";
 import Title from "../../atoms/Title/Title";
 import theme_pattern from "../../../../assets/theme_pattern.svg";
 
 interface MyServicesListProps {
-  services: MyServiceProps[];
+  services: CardProps[];
 }
 
 const MyServicesList: React.FC<MyServicesListProps> = ({ services = [] }) => {
@@ -14,11 +14,11 @@ const MyServicesList: React.FC<MyServicesListProps> = ({ services = [] }) => {
       <Title text="Mis Servicios" image={theme_pattern} />
       <ServicesContainer>
         {services.map((service, index) => (
-          <MyService
+          <Card
             key={index}
-            s_no={service.s_no}
-            s_name={service.s_name}
-            s_desc={service.s_desc}
+            number={service.number}
+            name={service.name}
+            description={service.description}
           />
         ))}
       </ServicesContainer>

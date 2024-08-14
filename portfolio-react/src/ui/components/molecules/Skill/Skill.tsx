@@ -1,5 +1,6 @@
-import React from 'react';
-import { SkillWrapper, SkillImageContainer, SkillImage, SkillText } from './Skill.styled';
+import React from "react";
+import { SkillWrapper, SkillImageContainer, SkillImage } from "./Skill.styled";
+import Text from "../../atoms/Text/Text";
 
 type SkillProps = {
   imageSrc: string;
@@ -13,7 +14,9 @@ const Skill: React.FC<SkillProps> = ({ imageSrc, altText, text }) => {
       <SkillImageContainer data-testid="skill-image-container">
         <SkillImage src={imageSrc} alt={altText} data-testid="skill-image" />
       </SkillImageContainer>
-      <SkillText data-testid="skill-text">{text}</SkillText>
+      <Text as="p" align="center" size="large">
+        {text}
+      </Text>
     </SkillWrapper>
   );
 };

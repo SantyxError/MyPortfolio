@@ -20,7 +20,6 @@ export const SkillImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: ${({ theme }) => theme.spacing.m};
   border: ${({ theme }) => theme.border.xs} solid;
   border-image-slice: 1;
   border-image-source: ${({ theme }) => theme.background.secondary};
@@ -38,9 +37,4 @@ export const SkillImage = styled.img`
   ${SkillWrapper}:hover & {
     transform: scale(1.1);
   }
-`;
-
-export const SkillText = styled.p`
-  margin: ${({ theme }) => theme.margin.none};
-  width: 5rem;
 `;

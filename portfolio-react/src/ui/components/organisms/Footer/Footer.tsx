@@ -1,7 +1,6 @@
 import React from "react";
 import {
   FooterBottom,
-  FooterBottomLeft,
   FooterBottomRight,
   FooterEmail,
   FooterEmailInput,
@@ -9,11 +8,11 @@ import {
   FooterTop,
   FooterTopLeft,
   FooterTopLeftImg,
-  FooterTopLeftParagraph,
   FooterTopRight,
   StyledHr,
   Wrapper,
 } from "./Footer.styled";
+import Text from "../../atoms/Text/Text";
 import footer_logo from "../../../../assets/logo_portfolio.svg";
 import user_icon from "../../../../assets/user_icon.svg";
 import { Button } from "../../atoms/Button/Button.styled";
@@ -28,10 +27,10 @@ const Footer: React.FC<FooterProps> = ({ connectText }) => {
       <FooterTop>
         <FooterTopLeft>
           <FooterTopLeftImg src={footer_logo} alt="Footer Logo" />
-          <FooterTopLeftParagraph>
+          <Text as="p" align="left" size="medium">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
             molestie dui turpis, ac malesuada mauris convallis ut.
-          </FooterTopLeftParagraph>
+          </Text>
         </FooterTopLeft>
         <FooterTopRight>
           <FooterEmail>
@@ -47,14 +46,20 @@ const Footer: React.FC<FooterProps> = ({ connectText }) => {
       </FooterTop>
       <StyledHr />
       <FooterBottom>
-        <FooterBottomLeft>
+        <Text as="p" align="left" size="medium">
           © {new Date().getFullYear()} Santiago Benito. Todos los derechos
           reservados.
-        </FooterBottomLeft>
+        </Text>
         <FooterBottomRight>
-          <p>Terminos de servicio</p>
-          <p>Política de privacidad</p>
-          <p>Conecta conmigo</p>
+          <Text as="p" align="left" size="medium">
+            Terminos de servicio
+          </Text>
+          <Text as="p" align="left" size="medium">
+            Política de privacidad
+          </Text>
+          <Text as="p" align="left" size="medium">
+            Conecta conmigo
+          </Text>
         </FooterBottomRight>
       </FooterBottom>
     </Wrapper>

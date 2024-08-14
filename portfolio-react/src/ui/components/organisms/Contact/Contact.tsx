@@ -7,6 +7,7 @@ import location_icon from "../../../../assets/location_icon.svg";
 import call_icon from "../../../../assets/call_icon.svg";
 import Subtitle from "../../atoms/Subtitles/Subtitle";
 import { Button } from "../../atoms/Button/Button";
+import Text from "../../atoms/Text/Text";
 import {
   ContactSection,
   ContactLeft,
@@ -59,40 +60,54 @@ const Contact: React.FC = () => {
         <ContactLeft>
           <Subtitle text={"¡Hablemos!"} />
           <ContactLeftParagraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-            molestie dui turpis, ac malesuada mauris convallis ut.
+            <Text as="p" align="left" size="large">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              molestie dui turpis, ac malesuada mauris convallis ut.
+            </Text>
           </ContactLeftParagraph>
           <ContactDetails>
             <ContactDetail>
               <ContactDetailImg src={mail_icon} alt="Email Icon" />
-              <p>email@gmail.com</p>
+              <Text as="p" align="left" size="large">
+                email@gmail.com
+              </Text>
             </ContactDetail>
             <ContactDetail>
               <ContactDetailImg src={call_icon} alt="Call Icon" />
-              <p>+1234-56-78</p>
+              <Text as="p" align="left" size="large">
+                +1234-56-78
+              </Text>
             </ContactDetail>
             <ContactDetail>
               <ContactDetailImg src={location_icon} alt="Location Icon" />
-              <p>Valencia, España</p>
+              <Text as="p" align="left" size="large">
+                Valencia, España
+              </Text>
             </ContactDetail>
           </ContactDetails>
         </ContactLeft>
         <ContactRight onSubmit={onSubmit}>
-          <ContactHtmlForm>Tu Nombre</ContactHtmlForm>
+          <Text as="p" align="left" size="medium">
+            Tu nombre
+          </Text>
           <ContactHtmlFormInput
             type="text"
             placeholder="Introduce tu nombre"
             name="name"
             required
           />
-          <ContactHtmlForm>Tu Email</ContactHtmlForm>
+          <Text as="p" align="left" size="medium">
+            Tu email
+          </Text>
           <ContactHtmlFormInput
             type="email"
             placeholder="Introduce tu email"
             name="email"
             required
           />
-          <ContactHtmlForm>Escribe tu mensaje aquí</ContactHtmlForm>
+          <Text as="p" align="left" size="medium">
+            Escribe tu mensaje aquí
+          </Text>
           <ContactHtmlFormTextArea
             name="message"
             rows={8}

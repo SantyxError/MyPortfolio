@@ -1,39 +1,39 @@
 export interface Service {
-  s_no: string;
-  s_name: string;
-  s_desc: string;
+  number: string;
+  name: string;
+  description: string;
 }
 
 const Services_Data: Service[] = [
   {
-    s_no: "01",
-    s_name: "Web design",
-    s_desc: " Lorem ipsum dolor sit amet, consectetur adipiscing elit....",
+    number: "01",
+    name: "Web design",
+    description: " Lorem ipsum dolor sit amet, consectetur adipiscing elit....",
   },
   {
-    s_no: "02",
-    s_name: "Graphic design",
-    s_desc: " Lorem ipsum dolor sit amet, consectetur adipiscing elit....",
+    number: "02",
+    name: "Graphic design",
+    description: " Lorem ipsum dolor sit amet, consectetur adipiscing elit....",
   },
   {
-    s_no: "03",
-    s_name: "Social media",
-    s_desc: " Lorem ipsum dolor sit amet, consectetur adipiscing elit....",
+    number: "03",
+    name: "Social media",
+    description: " Lorem ipsum dolor sit amet, consectetur adipiscing elit....",
   },
   {
-    s_no: "04",
-    s_name: "App design",
-    s_desc: " Lorem ipsum dolor sit amet, consectetur adipiscing elit....",
+    number: "04",
+    name: "App design",
+    description: " Lorem ipsum dolor sit amet, consectetur adipiscing elit....",
   },
   {
-    s_no: "05",
-    s_name: "Digital marketing",
-    s_desc: " Lorem ipsum dolor sit amet, consectetur adipiscing elit....",
+    number: "05",
+    name: "Digital marketing",
+    description: " Lorem ipsum dolor sit amet, consectetur adipiscing elit....",
   },
   {
-    s_no: "06",
-    s_name: "Content writing",
-    s_desc: " Lorem ipsum dolor sit amet, consectetur adipiscing elit....",
+    number: "06",
+    name: "Content writing",
+    description: " Lorem ipsum dolor sit amet, consectetur adipiscing elit....",
   },
 ];
 

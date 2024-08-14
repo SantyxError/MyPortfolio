@@ -90,7 +90,7 @@ export const ContactRight = styled.form`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: ${({ theme }) => theme.spacing.l};
+  gap: ${({ theme }) => theme.spacing.xs};
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
     margin-top: ${({ theme }) => theme.spacing.xl};
@@ -135,6 +135,7 @@ export const ContactHtmlFormTextArea = styled.textarea`
   background: ${({ theme }) => theme.color.darkGrey};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.xl};
+  margin-bottom: ${({ theme }) => theme.margin.xl};
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
     font-size: ${({ theme }) => theme.fontSize.m};

@@ -4,7 +4,6 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: ${({ theme }) => theme.spacing.xl};
 `;
 
 export const HeroImage = styled.img`
@@ -37,17 +36,19 @@ export const HeroSpan = styled.span`
   -webkit-text-fill-color: transparent;
 `;
 
-export const HeroP = styled.p`
-  text-align: center;
-  width: 50%;
-  font-size: ${({ theme }) => theme.fontSize.xl};
-  line-height: ${({ theme }) => theme.lineHeight.l};
-
+export const TitleWrapper = styled.div`
+  width: 60%;
+  padding: ${({ theme }) => theme.spacing.none}
+    ${({ theme }) => theme.spacing.xxxxxl};
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    margin: ${({ theme }) => theme.margin.m} ${({ theme }) => theme.margin.none};
-    width: 60%;
-    font-size: ${({ theme }) => theme.fontSize.xl};
-    line-height: ${({ theme }) => theme.lineHeight.m};
+  }
+`;
+
+export const TextWrapper = styled.div`
+  width: 45%;
+  padding: ${({ theme }) => theme.spacing.s}
+    ${({ theme }) => theme.spacing.xxxxxl};
+  ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
   }
 `;
 
