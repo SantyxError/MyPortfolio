@@ -1,9 +1,9 @@
 import React from "react";
 import { SubtitleText } from "./Subtitle.styled";
 
-interface SubtitleProps {
+type SubtitleProps = {
   text: string;
-}
+};
 
 const Subtitle: React.FC<SubtitleProps> = ({ text }) => {
   if (!text) return;

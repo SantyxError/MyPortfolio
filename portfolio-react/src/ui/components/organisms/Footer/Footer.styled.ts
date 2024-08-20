@@ -101,8 +101,9 @@ export const FooterBottomRight = styled.div`
   margin-bottom: ${({ theme }) => theme.margin.xxl};
 `;
 
-export const StyledHr = styled.hr`
-  border: 0;
+export const Divider = styled.div`
+  width: 100%;
+  height: 1px;
   border-top: ${({ theme }) => theme.border.xxs} solid
     ${({ theme }) => theme.color.white};
   margin: ${({ theme }) => theme.margin.s} ${({ theme }) => theme.margin.none};

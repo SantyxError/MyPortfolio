@@ -27,19 +27,14 @@ export const AboutSections = styled.div`
   }
 `;
 
-export const AboutLeft = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+export const AboutLeftImg = styled.img`
+  border-radius: ${({ theme }) => theme.borderRadius.m};
+  height: 100%;
   width: 40%;
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
     display: none;
   }
-`;
-export const AboutLeftImg = styled.img`
-  border-radius: ${({ theme }) => theme.borderRadius.m};
-  height: 100%;
 `;
 
 export const AboutRight = styled.div`

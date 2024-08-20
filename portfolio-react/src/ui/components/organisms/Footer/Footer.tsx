@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Divider,
   FooterBottom,
   FooterBottomRight,
   FooterEmail,
@@ -9,7 +10,6 @@ import {
   FooterTopLeft,
   FooterTopLeftImg,
   FooterTopRight,
-  StyledHr,
   Wrapper,
 } from "./Footer.styled";
 import Text from "../../atoms/Text/Text";
@@ -17,11 +17,11 @@ import footer_logo from "../../../../assets/logo_portfolio.svg";
 import user_icon from "../../../../assets/user_icon.svg";
 import { Button } from "../../atoms/Button/Button.styled";
 
-interface FooterProps {
-  connectText: string;
-}
+type FooterProps = {
+  connectButtonText: string;
+};
 
-const Footer: React.FC<FooterProps> = ({ connectText }) => {
+const Footer: React.FC<FooterProps> = ({ connectButtonText }) => {
   return (
     <Wrapper>
       <FooterTop>
@@ -40,11 +40,11 @@ const Footer: React.FC<FooterProps> = ({ connectText }) => {
           <Button
             variant="primary"
             onClick={() => console.log("Connect clicked")}>
-            {connectText}
+            {connectButtonText}
           </Button>
         </FooterTopRight>
       </FooterTop>
-      <StyledHr />
+      <Divider />
       <FooterBottom>
         <Text as="p" align="left" size="medium">
           © {new Date().getFullYear()} Santiago Benito. Todos los derechos

@@ -4,9 +4,9 @@ import { ServicesContainer, Wrapper } from "./MyServicesList.styled";
 import Title from "../../atoms/Title/Title";
 import theme_pattern from "../../../../assets/theme_pattern.svg";
 
-interface MyServicesListProps {
+type MyServicesListProps = {
   services: CardProps[];
-}
+};
 
 const MyServicesList: React.FC<MyServicesListProps> = ({ services = [] }) => {
   return (

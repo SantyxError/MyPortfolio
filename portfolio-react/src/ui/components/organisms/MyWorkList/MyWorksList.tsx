@@ -5,14 +5,13 @@ import arrow_icon from "../../../../assets/arrow_icon.svg";
 import {
   Wrapper,
   MyWorkContainer,
-  MyWorkShowMore,
   MyWorkContainerImg,
 } from "./MyWorksList.styled";
+import { Button } from "../../atoms/Button/Button.styled";
 
 type WorkData = {
-  id: number;
   title: string;
-  w_img: string;
+  workImg: string;
 };
 
 type MyWorksListProps = {
@@ -25,13 +24,17 @@ const MyWorksList: React.FC<MyWorksListProps> = ({ myWorkData }) => {
       <Title text="Mis últimos trabajos" image={theme_pattern} />
       <MyWorkContainer>
         {myWorkData.map((work, index) => (
-          <MyWorkContainerImg key={index} src={work.w_img} alt=" " />
+          <MyWorkContainerImg key={index} src={work.workImg} alt="Work Image" />
         ))}
       </MyWorkContainer>
-      <MyWorkShowMore>
-        <p>Mostrar más</p>
-        <img src={arrow_icon} alt=""></img>
-      </MyWorkShowMore>
+
+      {/* Botón Mostrar Más */}
+      <Button
+        variant="terciary"
+        onClick={() => console.log("Mostrar más clicked")}>
+        Mostrar más
+        <img src={arrow_icon} alt="Mostrar más" />
+      </Button>
     </Wrapper>
   );
 };

@@ -9,14 +9,13 @@ import {
 } from "./Hero.styled";
 import { Button } from "../../atoms/Button/Button.styled";
 import Text from "../../atoms/Text/Text";
-import Title from "../../atoms/Title/Title";
 
-interface HeroProps {
-  connectText: string;
-  resumeText: string;
-}
+type ctasTexts = {
+  primaryCtaText: string;
+  secondaryCtaText: string;
+};
 
-const Hero: React.FC<HeroProps> = ({ connectText, resumeText }) => {
+const Hero: React.FC<ctasTexts> = ({ primaryCtaText, secondaryCtaText }) => {
   return (
     <Wrapper id="home">
       <HeroImage src={profile_img} alt="Profile Image" />
@@ -40,12 +39,12 @@ const Hero: React.FC<HeroProps> = ({ connectText, resumeText }) => {
         <Button
           variant="primary"
           onClick={() => console.log("Connect clicked")}>
-          {connectText}
+          {primaryCtaText}
         </Button>
         <Button
           variant="secondary"
           onClick={() => console.log("Resume clicked")}>
-          {resumeText}
+          {secondaryCtaText}
         </Button>
       </HeroAction>
     </Wrapper>

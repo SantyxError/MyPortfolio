@@ -68,19 +68,19 @@ const Contact: React.FC = () => {
           <ContactDetails>
             <ContactDetail>
               <ContactDetailImg src={mail_icon} alt="Email Icon" />
-              <Text as="p" align="left" size="large">
+              <Text as="span" align="left" size="large" color="bone">
                 email@gmail.com
               </Text>
             </ContactDetail>
             <ContactDetail>
               <ContactDetailImg src={call_icon} alt="Call Icon" />
-              <Text as="p" align="left" size="large">
+              <Text as="span" align="left" size="large" color="bone">
                 +1234-56-78
               </Text>
             </ContactDetail>
             <ContactDetail>
               <ContactDetailImg src={location_icon} alt="Location Icon" />
-              <Text as="p" align="left" size="large">
+              <Text as="span" align="left" size="large" color="bone">
                 Valencia, España
               </Text>
             </ContactDetail>

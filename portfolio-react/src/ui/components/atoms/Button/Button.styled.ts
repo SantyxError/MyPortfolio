@@ -14,8 +14,20 @@ const COLOR = {
     transition: color 0.3s;
   `,
   terciary: css`
-    background-color: ${({ theme }) => theme.color.white};
-    color: ${({ theme }) => theme.color.black};
+    background: none;
+    color: ${({ theme }) => theme.color.white};
+    border: ${({ theme }) => theme.border.xxs} solid
+      ${({ theme }) => theme.color.white};
+    padding: ${({ theme }) => theme.spacing.m} ${({ theme }) => theme.spacing.l};
+    font-weight: 500;
+    transition:
+      color 0.3s,
+      background 0.3s;
+
+    &:hover {
+      background: ${({ theme }) => theme.color.white};
+      color: ${({ theme }) => theme.color.black};
+    }
   `,
 };
 
@@ -58,6 +70,21 @@ export const Button = styled.button<{
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         color: ${({ theme }) => theme.color.purple};
+      }
+
+      ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
+        font-size: ${({ theme }) => theme.fontSize.l};
+        font-weight: 500;
+        gap: ${({ theme }) => theme.spacing.m};
+      }
+    `}
+
+  ${({ variant }) =>
+    variant === "terciary" &&
+    css`
+      &:hover {
+        background: ${({ theme }) => theme.color.white};
+        color: ${({ theme }) => theme.color.black};
       }
 
       ${({ theme }) => theme.mediaQueries.mobileAndTablet} {

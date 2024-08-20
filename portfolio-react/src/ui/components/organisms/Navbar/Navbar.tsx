@@ -17,11 +17,11 @@ import menu_close from "../../../../assets/menu_close.svg";
 import { Link } from "react-scroll";
 import Text from "../../atoms/Text/Text";
 
-interface NavbarProps {
+type NavbarProps = {
   buttonVariant: "primary" | "secondary" | "terciary";
   onButtonClick: () => void;
   buttonText: string;
-}
+};
 
 const Navbar: React.FC<NavbarProps> = ({
   buttonVariant,

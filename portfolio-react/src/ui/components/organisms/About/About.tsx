@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  AboutLeft,
   AboutLeftImg,
   AboutParagraph,
   AboutRight,
@@ -16,11 +15,9 @@ import Title from "../../atoms/Title/Title";
 const About = () => {
   return (
     <Wrapper id="about">
-      <Title text={"Sobre mí"} image={theme_pattern}></Title>
+      <Title text="Sobre mí" image={theme_pattern}></Title>
       <AboutSections>
-        <AboutLeft>
-          <AboutLeftImg src={profile_img} alt="Profile Image" />
-        </AboutLeft>
+        <AboutLeftImg src={profile_img} alt="Profile Image" />
         <AboutRight>
           <AboutParagraph>
             <Text as="p" size="large">

@@ -2,10 +2,10 @@ import React from "react";
 import { TitleImg, TitleText, Wrapper } from "./Title.styled";
 import Text from "../Text/Text";
 
-interface TitleProps {
+type TitleProps = {
   text: string;
   image: string;
-}
+};
 
 const Title: React.FC<TitleProps> = ({ text, image }) => {
   return (

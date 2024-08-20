@@ -1,9 +1,9 @@
 import React from "react";
 import { ParagraphText } from "./Paragraph.styled";
 
-interface ParagraphProps {
+type ParagraphProps = {
   text: string;
-}
+};
 
 const Paragraph: React.FC<ParagraphProps> = ({ text }) => {
   if (!text) {

@@ -12,12 +12,12 @@ import Contact from "./ui/components/organisms/Contact/Contact";
 import Footer from "./ui/components/organisms/Footer/Footer";
 
 const myWorkData = [
-  { id: 1, title: "Project 1", w_img: "src/assets/project_1.svg" },
-  { id: 2, title: "Project 2", w_img: "src/assets/project_2.svg" },
-  { id: 3, title: "Project 3", w_img: "src/assets/project_3.svg" },
-  { id: 4, title: "Project 4", w_img: "src/assets/project_4.svg" },
-  { id: 5, title: "Project 5", w_img: "src/assets/project_5.svg" },
-  { id: 6, title: "Project 6", w_img: "src/assets/project_6.svg" },
+  { title: "Project 1", workImg: "src/assets/project_1.svg" },
+  { title: "Project 2", workImg: "src/assets/project_2.svg" },
+  { title: "Project 3", workImg: "src/assets/project_3.svg" },
+  { title: "Project 4", workImg: "src/assets/project_4.svg" },
+  { title: "Project 5", workImg: "src/assets/project_5.svg" },
+  { title: "Project 6", workImg: "src/assets/project_6.svg" },
 ];
 
 function App() {
@@ -29,12 +29,12 @@ function App() {
         onButtonClick={() => console.log("Button clicked")}
         buttonText="Conecta conmigo"
       />
-      <Hero connectText="Conecta conmigo" resumeText="Mis Trabajos" />
+      <Hero primaryCtaText="Conecta conmigo" secondaryCtaText="Mis Trabajos" />
       <About />
       <MyServicesList services={Services} />
       <MyWorksList myWorkData={myWorkData} />
       <Contact />
-      <Footer connectText="Conecta conmigo" />
+      <Footer connectButtonText="Conecta conmigo" />
     </ThemeProvider>
   );
 }

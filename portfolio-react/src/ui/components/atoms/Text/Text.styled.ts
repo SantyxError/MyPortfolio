@@ -1,80 +1,100 @@
-import styled, { css } from "styled-components";
+import styled, { css, DefaultTheme } from "styled-components";
 import React from "react";
 import { TextProps } from "./Text";
 
-const TAG = {
-  h1: css`
-    padding: ${({ theme }) => theme.spacing.none}
-      ${({ theme }) => theme.spacing.xl};
-    font-size: ${({ theme }) => theme.fontSize.xxxxxxl};
-    font-weight: 600;
+type StyledTextProps = TextProps & { theme: DefaultTheme };
 
-    ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-      font-size: ${({ theme }) => theme.fontSize.xxxxxl};
-      padding: ${({ theme }) => theme.spacing.none};
-    }
-  `,
-  h2: css`
-    background: ${({ theme }) => theme.background.cuaternary};
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: ${({ theme, size }) =>
-      size === "small" ? theme.fontSize.xxxl : theme.fontSize.xxxxxl};
-    padding: ${({ theme }) => theme.spacing.none}
-      ${({ theme }) => theme.spacing.none};
-    margin-bottom: ${({ theme }) => theme.margin.xl};
-    font-weight: 600;
-  `,
-  h3: css`
-    font-size: ${({ theme }) => theme.fontSize.xxl};
-    font-weight: 600;
+const getStyles = ({
+  as,
+  theme,
+  size,
+  align,
+  fontStyle,
+  fontWeight,
+  color,
+}: StyledTextProps) => {
+  switch (as) {
+    case "h1":
+      return css`
+        padding: ${theme.spacing.none} ${theme.spacing.xl};
+        font-size: ${theme.fontSize.xxxxxxl};
+        font-weight: 600;
 
-    ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-      font-size: ${({ theme }) => theme.fontSize.xxl};
-    }
-  `,
-  h4: css``,
-  h5: css``,
-  h6: css``,
+        ${theme.mediaQueries.mobileAndTablet} {
+          font-size: ${theme.fontSize.xxxxxl};
+          padding: ${theme.spacing.none};
+        }
+      `;
+    case "h2":
+      return css`
+        background: ${theme.background.cuaternary};
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: ${size === "small"
+          ? theme.fontSize.xxxl
+          : theme.fontSize.xxxxxl};
+        padding: ${theme.spacing.none};
+        margin-bottom: ${theme.margin.xl};
+        font-weight: 600;
+      `;
+    case "h3":
+      return css`
+        font-size: ${theme.fontSize.xxl};
+        font-weight: 600;
 
-  p: css`
-    font-size: ${({ theme, size }) =>
-      size === "small"
-        ? theme.fontSize.s
-        : size === "medium"
-          ? theme.fontSize.l
-          : size === "large"
-            ? theme.fontSize.xl
-            : size === "xlarge"
-              ? theme.fontSize.xxl
-              : size === "superLarge"
-                ? theme.fontSize.xxxxxxl
-                : theme.fontSize.xxxl};
-    line-height: ${({ theme }) => theme.lineHeight.m};
-    text-align: ${({ align }) => align};
-    font-style: ${({ fontStyle }) => fontStyle || "normal"};
-    font-weight: ${({ fontWeight }) => fontWeight || "normal"};
+        ${theme.mediaQueries.mobileAndTablet} {
+          font-size: ${theme.fontSize.xxl};
+        }
+      `;
+    case "p":
+      return css`
+        font-size: ${(() => {
+          switch (size) {
+            case "small":
+              return theme.fontSize.s;
+            case "medium":
+              return theme.fontSize.l;
+            case "large":
+              return theme.fontSize.xl;
+            case "xlarge":
+              return theme.fontSize.xxl;
+            case "superLarge":
+              return theme.fontSize.xxxxxxl;
+            default:
+              return theme.fontSize.xxxl;
+          }
+        })()};
+        line-height: ${theme.lineHeight.m};
+        text-align: ${align};
+        font-style: ${fontStyle || "normal"};
+        font-weight: ${fontWeight || "normal"};
 
-    ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-      gap: ${({ theme }) => theme.spacing.m};
-      font-size: ${({ theme }) => theme.fontSize.l};
-      line-height: ${({ theme }) => theme.lineHeight.m};
-    }
-  `,
-  span: css`
-    background: ${({ theme }) => theme.background.primary};
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-style: ${({ fontStyle }) => fontStyle || "normal"};
-    font-weight: ${({ fontWeight }) => fontWeight || "normal"};
-  `,
-  default: css``,
+        ${theme.mediaQueries.mobileAndTablet} {
+          font-size: ${theme.fontSize.l};
+        }
+      `;
+    case "span":
+      return css`
+        ${color
+          ? css`
+              color: ${color};
+            `
+          : css`
+              background: ${theme.background.primary};
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            `}
+        font-style: ${fontStyle || "normal"};
+        font-weight: ${fontWeight || "normal"};
+      `;
+    default:
+      return css``;
+  }
 };
 
 export const Text = styled(
   ({ as = "span", children, className, size, ...rest }: TextProps) =>
     React.createElement(as, { className, ...rest }, children)
 )<TextProps>`
-  ${({ as }) => TAG[as as keyof typeof TAG] || TAG.default}
+  ${({ theme, ...props }) => getStyles({ theme, ...props })}
 `;

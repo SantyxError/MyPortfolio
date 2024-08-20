@@ -7,11 +7,11 @@ import {
 import arrow_icon from "../../../../assets/arrow_icon.svg";
 import Text from "../Text/Text";
 
-export interface CardProps {
+export type CardProps = {
   number: string;
   name: string;
   description: string;
-}
+};
 
 const Card: React.FC<CardProps> = ({ number, name, description }) => {
   return (

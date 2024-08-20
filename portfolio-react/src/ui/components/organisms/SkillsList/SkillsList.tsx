@@ -1,5 +1,5 @@
 import React from "react";
-import Skill from "../../molecules/Skill/Skill";
+import Skill from "../../atoms/Skill/Skill";
 import { SkillsListContainer, SkillsListWrapper } from "./SkillsList.styled";
 import Subtitle from "../../atoms/Subtitles/Subtitle";
 

@@ -55,7 +55,7 @@ export const ContactLeftParagraph = styled.div`
 export const ContactDetails = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${({ theme }) => theme.spacing.s};
+  gap: ${({ theme }) => theme.spacing.xxl};
   color: ${({ theme }) => theme.color.bone};
   font-size: ${({ theme }) => theme.fontSize.l};
   margin-top: ${({ theme }) => theme.margin.m};
