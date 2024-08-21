@@ -22,7 +22,7 @@ const Hero: React.FC<ctasTexts> = ({ primaryCtaText, secondaryCtaText }) => {
       <TitleWrapper>
         <Text as="p" align="center" fontWeight="bold" size="superLarge">
           Soy {}
-          <Text as="span" align="center" fontWeight="bold">
+          <Text as="span" align="center" fontWeight="bold" size="superLarge">
             Santiago Benito
           </Text>
           , desarrollador y diseñador gráfico.

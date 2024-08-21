@@ -1,5 +1,5 @@
 import styled, { css, DefaultTheme } from "styled-components";
-import React from "react";
+import React, { ReactNode } from "react";
 import { TextProps } from "./Text";
 
 type StyledTextProps = TextProps & { theme: DefaultTheme };
@@ -86,15 +86,55 @@ const getStyles = ({
             `}
         font-style: ${fontStyle || "normal"};
         font-weight: ${fontWeight || "normal"};
+        font-size: ${(() => {
+          switch (size) {
+            case "small":
+              return theme.fontSize.s;
+            case "medium":
+              return theme.fontSize.l;
+            case "large":
+              return theme.fontSize.xl;
+            case "xlarge":
+              return theme.fontSize.xxl;
+            case "superLarge":
+              return theme.fontSize.xxxxxxl;
+            default:
+              return theme.fontSize.xxxl;
+          }
+        })()};
       `;
     default:
       return css``;
   }
 };
 
+const TitleImg = styled.img`
+  position: absolute;
+  bottom: ${({ theme }) => theme.spacing.none};
+  right: ${({ theme }) => theme.spacing.none};
+  z-index: -1;
+
+  ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
+    width: 130px;
+    right: -20px;
+  }
+`;
+
 export const Text = styled(
-  ({ as = "span", children, className, size, ...rest }: TextProps) =>
-    React.createElement(as, { className, ...rest }, children)
-)<TextProps>`
+  ({
+    as = "span",
+    children,
+    className,
+    size,
+    image,
+    ...rest
+  }: TextProps & { children: ReactNode }) =>
+    React.createElement(as, { className, ...rest }, [
+      children,
+      image && as === "h1"
+        ? React.createElement(TitleImg, { src: image, alt: "Title image" })
+        : null,
+    ])
+)<TextProps & { children: ReactNode }>`
   ${({ theme, ...props }) => getStyles({ theme, ...props })}
 `;

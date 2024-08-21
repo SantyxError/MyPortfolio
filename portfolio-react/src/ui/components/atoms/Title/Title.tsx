@@ -10,9 +10,9 @@ type TitleProps = {
 const Title: React.FC<TitleProps> = ({ text, image }) => {
   return (
     <Wrapper>
-      {/*  <TitleText>{text}</TitleText> */}
-      <Text as="h1">{text}</Text>
-      <TitleImg src={image} alt="Title image" />
+      <Text as="h1" image={image}>
+        {text}
+      </Text>
     </Wrapper>
   );
 };

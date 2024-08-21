@@ -31,18 +31,18 @@ const Navbar: React.FC<NavbarProps> = ({
   const [menu, setMenu] = useState("home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const openMenu = () => {
+  const handleOpenMenu = () => {
     setIsMenuOpen(true);
   };
 
-  const closeMenu = () => {
+  const handleCloseMenu = () => {
     setIsMenuOpen(false);
   };
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 768) {
-        closeMenu();
+        handleCloseMenu();
       }
     };
 
@@ -56,11 +56,11 @@ const Navbar: React.FC<NavbarProps> = ({
       <ImgNavMobOpen
         src={menu_open}
         alt="Menu open"
-        onClick={openMenu}
+        onClick={handleOpenMenu}
         isOpen={isMenuOpen}
       />
       <NavMenu isOpen={isMenuOpen}>
-        <ImgNavMobClose src={menu_close} alt="Menu close" onClick={closeMenu} />
+        <ImgNavMobClose src={menu_close} alt="Menu close" onClick={handleCloseMenu} />
         <NavMenuItem>
           <Link
             to="home"
@@ -68,7 +68,7 @@ const Navbar: React.FC<NavbarProps> = ({
             duration={500}
             onClick={() => {
               setMenu("home");
-              closeMenu();
+              handleCloseMenu();
             }}>
             <Text as="p" size="large">
               Home
@@ -83,7 +83,7 @@ const Navbar: React.FC<NavbarProps> = ({
             duration={500}
             onClick={() => {
               setMenu("about");
-              closeMenu();
+              handleCloseMenu();
             }}>
             <Text as="p" size="large">
               Sobre mí
@@ -98,7 +98,7 @@ const Navbar: React.FC<NavbarProps> = ({
             duration={500}
             onClick={() => {
               setMenu("services");
-              closeMenu();
+              handleCloseMenu();
             }}>
             <Text as="p" size="large">
               Servicios
@@ -115,7 +115,7 @@ const Navbar: React.FC<NavbarProps> = ({
             duration={500}
             onClick={() => {
               setMenu("work");
-              closeMenu();
+              handleCloseMenu();
             }}>
             <Text as="p" size="large">
               Mis trabajos
@@ -130,7 +130,7 @@ const Navbar: React.FC<NavbarProps> = ({
             duration={500}
             onClick={() => {
               setMenu("contact");
-              closeMenu();
+              handleCloseMenu();
             }}>
             <Text as="p" size="large">
               Contacto

@@ -5,7 +5,6 @@ import theme_pattern from "../../../../assets/theme_pattern.svg";
 import mail_icon from "../../../../assets/mail_icon.svg";
 import location_icon from "../../../../assets/location_icon.svg";
 import call_icon from "../../../../assets/call_icon.svg";
-import Subtitle from "../../atoms/Subtitles/Subtitle";
 import { Button } from "../../atoms/Button/Button";
 import Text from "../../atoms/Text/Text";
 import {
@@ -15,7 +14,6 @@ import {
   ContactDetails,
   ContactDetail,
   ContactRight,
-  ContactHtmlForm,
   ContactDetailImg,
   ContactHtmlFormInput,
   ContactHtmlFormTextArea,
@@ -55,10 +53,14 @@ const Contact: React.FC = () => {
 
   return (
     <Wrapper id="contact">
-      <Title text="Contacto" image={theme_pattern} />
+      <Text as="h1" image={theme_pattern}>
+        Contacto
+      </Text>
       <ContactSection>
         <ContactLeft>
-          <Subtitle text={"¡Hablemos!"} />
+          <Text as="span" size="superLarge">
+            ¡Hablemos!
+          </Text>
           <ContactLeftParagraph>
             <Text as="p" align="left" size="large">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas

@@ -24,7 +24,7 @@ const Card: React.FC<CardProps> = ({ number, name, description }) => {
         {description}
       </Text>
       <ServicesReadmore>
-        <Text as="p" size="large">
+        <Text as="span" size="medium" color="white">
           Leer más
         </Text>
         <ServicesReadmoreImg src={arrow_icon} alt="Leer más" />

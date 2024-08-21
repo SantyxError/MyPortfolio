@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { Text as TextComponent } from "./Text.styled";
 
 type Tag = "p" | "span" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
@@ -9,7 +9,7 @@ type FontStyle = "normal" | "italic";
 type Color = "white" | "primary" | "secondary" | "bone" | "grey" | string;
 
 export type TextProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   as?: Tag;
   className?: string;
   size?: Size;

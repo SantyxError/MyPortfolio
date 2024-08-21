@@ -1,12 +1,14 @@
 import React from "react";
 import Skill from "../../atoms/Skill/Skill";
 import { SkillsListContainer, SkillsListWrapper } from "./SkillsList.styled";
-import Subtitle from "../../atoms/Subtitles/Subtitle";
+import Text from "../../atoms/Text/Text";
 
 const SkillsList = () => {
   return (
     <SkillsListContainer data-testid="skills-list-container">
-      <Subtitle text="Mis Skills" />
+      <Text as="span" size="superLarge">
+        Mis skills
+      </Text>
       <SkillsListWrapper data-testid="skills-list-wrapper">
         <Skill
           imageSrc="src\assets\skills\html5-original-wordmark.svg"

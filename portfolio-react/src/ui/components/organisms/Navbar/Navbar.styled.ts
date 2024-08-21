@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
-// Wrapper del Navbar
-export const Wrapper = styled.div<{ isMenuOpen: boolean }>`
+
+export const Wrapper = styled.nav<{ isMenuOpen: boolean }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: ${({ theme }) => theme.margin.l} 20px;
   position: relative;
   overflow: ${({ isMenuOpen }) => (isMenuOpen ? "hidden" : "auto")};
-  transition: padding 0.3s ease; /* Transición suave para el padding si es necesario */
+  transition: padding 0.3s ease;
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
     padding: ${({ theme }) => theme.margin.m} 25px;

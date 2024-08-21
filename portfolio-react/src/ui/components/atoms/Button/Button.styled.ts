@@ -5,15 +5,27 @@ const COLOR = {
     background: ${({ theme }) => theme.background.primary};
     color: ${({ theme }) => theme.color.white};
     border: unset;
+    transition: color 0.3s transform 0.4s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   `,
   secondary: css`
     background: none;
     color: ${({ theme }) => theme.color.white};
     border: 2px solid ${({ theme }) => theme.color.white};
     padding: ${({ theme }) => theme.spacing.m} ${({ theme }) => theme.spacing.l};
-    transition: color 0.3s;
+    transition: color 0.3s transform 0.4s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   `,
   terciary: css`
+    display: flex;
+    align-items: center;
+    gap: ${({ theme }) => theme.spacing.m};
     background: none;
     color: ${({ theme }) => theme.color.white};
     border: ${({ theme }) => theme.border.xxs} solid
@@ -22,11 +34,14 @@ const COLOR = {
     font-weight: 500;
     transition:
       color 0.3s,
-      background 0.3s;
+      background 0.3s,
+      gap 0.4s,
+      transform 0.4s;
 
     &:hover {
-      background: ${({ theme }) => theme.color.white};
-      color: ${({ theme }) => theme.color.black};
+      color: ${({ theme }) => theme.color.purple};
+      gap: ${({ theme }) => theme.spacing.xl};
+      transform: scaleX(1.1);
     }
   `,
 };
@@ -43,7 +58,6 @@ export const Button = styled.button<{
   cursor: pointer;
 
   &:hover {
-    transform: scale(1.1);
     transition: 0.3s;
   }
 
@@ -83,8 +97,10 @@ export const Button = styled.button<{
     variant === "terciary" &&
     css`
       &:hover {
-        background: ${({ theme }) => theme.color.white};
-        color: ${({ theme }) => theme.color.black};
+        gap: ${({ theme }) => theme.spacing.xl};
+        transform: scaleX(1.1);
+        border: ${({ theme }) => theme.border.xxs} solid
+          ${({ theme }) => theme.color.purple};
       }
 
       ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
