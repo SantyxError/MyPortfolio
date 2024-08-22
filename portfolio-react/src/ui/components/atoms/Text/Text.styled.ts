@@ -4,18 +4,45 @@ import { TextProps } from "./Text";
 
 type StyledTextProps = TextProps & { theme: DefaultTheme };
 
-const getStyles = ({
-  as,
-  theme,
-  size,
+const getFontSize = (
+  size: string | undefined,
+  theme: DefaultTheme,
+  defaultSize: string
+) => {
+  switch (size) {
+    case "small":
+      return theme.fontSize.s;
+    case "medium":
+      return theme.fontSize.l;
+    case "large":
+      return theme.fontSize.xl;
+    case "xlarge":
+      return theme.fontSize.xxxl;
+    case "superLarge":
+      return theme.fontSize.xxxxxxl;
+    default:
+      return defaultSize;
+  }
+};
+
+const commonTextStyles = ({
   align,
   fontStyle,
   fontWeight,
-  color,
-}: StyledTextProps) => {
+}: StyledTextProps) => css`
+  text-align: ${align};
+  font-style: ${fontStyle || "normal"};
+  font-weight: ${fontWeight || "normal"};
+`;
+
+const getStyles = ({ as, theme, size, ...props }: StyledTextProps) => {
+  const baseStyles = commonTextStyles(props);
+
   switch (as) {
     case "h1":
       return css`
+        ${baseStyles}
+        position: relative;
         padding: ${theme.spacing.none} ${theme.spacing.xl};
         font-size: ${theme.fontSize.xxxxxxl};
         font-weight: 600;
@@ -27,18 +54,18 @@ const getStyles = ({
       `;
     case "h2":
       return css`
+        ${baseStyles}
         background: ${theme.background.cuaternary};
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        font-size: ${size === "small"
-          ? theme.fontSize.xxxl
-          : theme.fontSize.xxxxxl};
+        font-size: ${getFontSize(size, theme, theme.fontSize.xxxxxl)};
         padding: ${theme.spacing.none};
         margin-bottom: ${theme.margin.xl};
         font-weight: 600;
       `;
     case "h3":
       return css`
+        ${baseStyles}
         font-size: ${theme.fontSize.xxl};
         font-weight: 600;
 
@@ -48,26 +75,9 @@ const getStyles = ({
       `;
     case "p":
       return css`
-        font-size: ${(() => {
-          switch (size) {
-            case "small":
-              return theme.fontSize.s;
-            case "medium":
-              return theme.fontSize.l;
-            case "large":
-              return theme.fontSize.xl;
-            case "xlarge":
-              return theme.fontSize.xxl;
-            case "superLarge":
-              return theme.fontSize.xxxxxxl;
-            default:
-              return theme.fontSize.xxxl;
-          }
-        })()};
+        ${baseStyles}
+        font-size: ${getFontSize(size, theme, theme.fontSize.xxxl)};
         line-height: ${theme.lineHeight.m};
-        text-align: ${align};
-        font-style: ${fontStyle || "normal"};
-        font-weight: ${fontWeight || "normal"};
 
         ${theme.mediaQueries.mobileAndTablet} {
           font-size: ${theme.fontSize.l};
@@ -75,33 +85,17 @@ const getStyles = ({
       `;
     case "span":
       return css`
-        ${color
+        ${baseStyles}
+        ${props.color
           ? css`
-              color: ${color};
+              color: ${props.color};
             `
           : css`
               background: ${theme.background.primary};
               -webkit-background-clip: text;
               -webkit-text-fill-color: transparent;
             `}
-        font-style: ${fontStyle || "normal"};
-        font-weight: ${fontWeight || "normal"};
-        font-size: ${(() => {
-          switch (size) {
-            case "small":
-              return theme.fontSize.s;
-            case "medium":
-              return theme.fontSize.l;
-            case "large":
-              return theme.fontSize.xl;
-            case "xlarge":
-              return theme.fontSize.xxl;
-            case "superLarge":
-              return theme.fontSize.xxxxxxl;
-            default:
-              return theme.fontSize.xxxl;
-          }
-        })()};
+        font-size: ${getFontSize(size, theme, theme.fontSize.xxxl)};
       `;
     default:
       return css``;
@@ -131,9 +125,13 @@ export const Text = styled(
   }: TextProps & { children: ReactNode }) =>
     React.createElement(as, { className, ...rest }, [
       children,
-      image && as === "h1"
-        ? React.createElement(TitleImg, { src: image, alt: "Title image" })
-        : null,
+      image &&
+        as === "h1" &&
+        React.createElement(TitleImg, {
+          key: "title-img",
+          src: image,
+          alt: "Title image",
+        }),
     ])
 )<TextProps & { children: ReactNode }>`
   ${({ theme, ...props }) => getStyles({ theme, ...props })}

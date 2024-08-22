@@ -17,9 +17,7 @@ const Card: React.FC<CardProps> = ({ number, name, description }) => {
   return (
     <ServicesFormat>
       <Text as="h3">{number}</Text>
-      <Text as="h2" size="small">
-        {name}
-      </Text>
+      <Text as="h2">{name}</Text>
       <Text as="p" size="large">
         {description}
       </Text>
