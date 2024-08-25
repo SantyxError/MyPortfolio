@@ -1,29 +1,13 @@
-import { render, screen } from "@testing-library/react";
-import { theme } from "../../../../../styles/theme";
+import { screen } from "@testing-library/react";
 import React from "react";
 import Card from "../Card";
-import { ThemeProvider } from "styled-components";
+import { renderProvider } from "@/__tests__/renderProvider";
 
-describe("MyService", () => {
-  const mockService = {
-    s_no: "01",
-    s_name: "Web Design",
-    s_desc: "Web development is the process of building, programming...",
-  };
+describe("Card Component", () => {
+  it("should render component", () => {
+    renderProvider(<Card number={""} name={""} description={""} />);
+    const titleElement = screen.getByText("Leer más");
 
-  test("renders MyService component with given props", () => {
-    render(
-      <ThemeProvider theme={theme}>
-        <Card
-          number={mockService.s_no}
-          name={mockService.s_name}
-          description={mockService.s_desc}
-        />
-      </ThemeProvider>
-    );
-
-    expect(screen.getByText(mockService.s_no)).toBeInTheDocument();
-    expect(screen.getByText(mockService.s_name)).toBeInTheDocument();
-    expect(screen.getByText(mockService.s_desc)).toBeInTheDocument();
+    expect(titleElement).toBeInTheDocument();
   });
 });

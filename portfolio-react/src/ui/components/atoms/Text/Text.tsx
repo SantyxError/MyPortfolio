@@ -1,8 +1,9 @@
 import React, { ReactNode } from "react";
 import { Text as TextComponent } from "./Text.styled";
+import { TitleImg } from "../Title/Title.styled";
 
 type Tag = "p" | "span" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-type Size = "small" | "medium" | "large" | "xlarge" | "superLarge";
+type Size = "default" | "small" | "medium" | "large" | "xlarge" | "superLarge";
 type TextAlign = "left" | "center" | "right" | "justify";
 type FontWeight = "normal" | "bold";
 type FontStyle = "normal" | "italic";
@@ -24,7 +25,7 @@ const Text: React.FC<TextProps> = ({
   children,
   as = "span",
   className,
-  size,
+  size = "default",
   image,
   align = "justify",
   fontWeight = "normal",
@@ -32,17 +33,21 @@ const Text: React.FC<TextProps> = ({
   color,
 }) => {
   return (
-    <TextComponent
-      as={as}
-      className={className}
-      size={size}
-      image={image}
-      align={align}
-      fontWeight={fontWeight}
-      fontStyle={fontStyle}
-      color={color}>
-      {children}
-    </TextComponent>
+    <>
+      <TextComponent
+        as={as}
+        className={className}
+        size={size}
+        image={image}
+        align={align}
+        fontWeight={fontWeight}
+        fontStyle={fontStyle}
+        color={color}>
+        {children}
+      </TextComponent>
+
+      {image && <TitleImg src={image} alt="" />}
+    </>
   );
 };
 

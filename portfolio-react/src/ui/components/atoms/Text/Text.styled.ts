@@ -4,39 +4,47 @@ import { TextProps } from "./Text";
 
 type StyledTextProps = TextProps & { theme: DefaultTheme };
 
-const getFontSize = (
-  size: string | undefined,
-  theme: DefaultTheme,
-  defaultSize: string
-) => {
-  switch (size) {
-    case "small":
-      return theme.fontSize.s;
-    case "medium":
-      return theme.fontSize.l;
-    case "large":
-      return theme.fontSize.xl;
-    case "xlarge":
-      return theme.fontSize.xxxl;
-    case "superLarge":
-      return theme.fontSize.xxxxxxl;
-    default:
-      return defaultSize;
-  }
+const mapFontSize = {
+  default: css`
+    ${({ theme }) => theme.fontSize.l};
+  `,
+  small: css`
+    ${({ theme }) => theme.fontSize.s};
+  `,
+  medium: css`
+    ${({ theme }) => theme.fontSize.l};
+  `,
+  large: css`
+    ${({ theme }) => theme.fontSize.xl};
+  `,
+  xlarge: css`
+    ${({ theme }) => theme.fontSize.xxxl};
+  `,
+  superLarge: css`
+    ${({ theme }) => theme.fontSize.xxxxxxl};
+  `,
 };
 
-const commonTextStyles = ({
-  align,
-  fontStyle,
-  fontWeight,
-}: StyledTextProps) => css`
+const commonTextStyles = (
+  align?: string,
+  fontStyle?: string,
+  fontWeight?: string
+) => css`
   text-align: ${align};
   font-style: ${fontStyle || "normal"};
   font-weight: ${fontWeight || "normal"};
 `;
 
-const getStyles = ({ as, theme, size, ...props }: StyledTextProps) => {
-  const baseStyles = commonTextStyles(props);
+const getStyles = ({
+  as,
+  theme,
+  size,
+  color,
+  align,
+  fontStyle,
+  fontWeight,
+}: StyledTextProps) => {
+  const baseStyles = commonTextStyles(align, fontStyle, fontWeight);
 
   switch (as) {
     case "h1":
@@ -58,7 +66,7 @@ const getStyles = ({ as, theme, size, ...props }: StyledTextProps) => {
         background: ${theme.background.cuaternary};
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        font-size: ${getFontSize(size, theme, theme.fontSize.xxxxxl)};
+        font-size: ${theme.fontSize.xxxl};
         padding: ${theme.spacing.none};
         margin-bottom: ${theme.margin.xl};
         font-weight: 600;
@@ -76,7 +84,7 @@ const getStyles = ({ as, theme, size, ...props }: StyledTextProps) => {
     case "p":
       return css`
         ${baseStyles}
-        font-size: ${getFontSize(size, theme, theme.fontSize.xxxl)};
+        font-size: ${!!size && mapFontSize[size]};
         line-height: ${theme.lineHeight.m};
 
         ${theme.mediaQueries.mobileAndTablet} {
@@ -86,23 +94,23 @@ const getStyles = ({ as, theme, size, ...props }: StyledTextProps) => {
     case "span":
       return css`
         ${baseStyles}
-        ${props.color
+        ${color
           ? css`
-              color: ${props.color};
+              color: ${color};
             `
           : css`
               background: ${theme.background.primary};
               -webkit-background-clip: text;
               -webkit-text-fill-color: transparent;
             `}
-        font-size: ${getFontSize(size, theme, theme.fontSize.xxxl)};
+        font-size: ${!!size && mapFontSize[size]};
       `;
     default:
       return css``;
   }
 };
 
-const TitleImg = styled.img`
+export const TitleImg = styled.img`
   position: absolute;
   bottom: ${({ theme }) => theme.spacing.none};
   right: ${({ theme }) => theme.spacing.none};
@@ -125,13 +133,7 @@ export const Text = styled(
   }: TextProps & { children: ReactNode }) =>
     React.createElement(as, { className, ...rest }, [
       children,
-      image &&
-        as === "h1" &&
-        React.createElement(TitleImg, {
-          key: "title-img",
-          src: image,
-          alt: "Title image",
-        }),
+      image && as === "h1",
     ])
 )<TextProps & { children: ReactNode }>`
   ${({ theme, ...props }) => getStyles({ theme, ...props })}

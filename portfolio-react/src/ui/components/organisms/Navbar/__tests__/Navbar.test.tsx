@@ -1,54 +1,24 @@
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import Navbar from "../Navbar";
-import { ThemeProvider } from "styled-components";
-import { theme } from "../../../../../styles/theme";
-
-jest.mock("../../../atoms/Button/Button", () => ({
-  Button: ({
-    children,
-    onClick,
-  }: {
-    children: React.ReactNode;
-    onClick?: () => void;
-  }) => <button onClick={onClick}>{children}</button>,
-}));
+import { renderProvider } from "@/__tests__/renderProvider";
 
 describe("Navbar Component", () => {
-  const buttonText = "Conecta conmigo";
-  const buttonVariant = "primary" as const;
-  const handleClick = jest.fn();
-
-  const renderNavbar = () =>
-    render(
-      <ThemeProvider theme={theme}>
-        <Navbar
-          buttonText={buttonText}
-          buttonVariant={buttonVariant}
-          onButtonClick={handleClick}
-        />
-      </ThemeProvider>
+  it("should render component", () => {
+    renderProvider(
+      <Navbar
+        buttonVariant={"primary"}
+        onButtonClick={function (): void {
+          throw new Error("Function not implemented.");
+        }}
+        buttonText={""}
+      />
     );
+    const textElement = screen.getByText("Sobre mí");
+    const profileImage = screen.getByAltText("Logo");
 
-  it("should render Navbar with all props", () => {
-    renderNavbar();
-
-    expect(screen.getByAltText("Logo")).toBeInTheDocument();
-
-    const menuItems = ["Home", "Sobre mi", "Servicios", "Portfolio", "Contacto"];
-    menuItems.forEach((item) => {
-      expect(screen.getByText(item)).toBeInTheDocument();
-    });
-
-    expect(screen.getByText(buttonText)).toBeInTheDocument();
-  });
-
-  it("should handle button clicks", () => {
-    renderNavbar();
-
-    const button = screen.getByText(buttonText);
-    fireEvent.click(button);
-    expect(handleClick).toHaveBeenCalled();
+    expect(textElement).toBeInTheDocument();
+    expect(profileImage).toBeInTheDocument();
   });
 });

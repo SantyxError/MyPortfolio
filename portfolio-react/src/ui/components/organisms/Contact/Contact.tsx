@@ -1,5 +1,4 @@
 import React from "react";
-import Title from "../../atoms/Title/Title";
 import { Wrapper } from "../About/About.styled";
 import theme_pattern from "../../../../assets/theme_pattern.svg";
 import mail_icon from "../../../../assets/mail_icon.svg";
@@ -18,6 +17,7 @@ import {
   ContactHtmlFormInput,
   ContactHtmlFormTextArea,
 } from "./Contact.styled";
+import Title from "../../atoms/Title/Title";
 
 const Contact: React.FC = () => {
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -53,9 +53,7 @@ const Contact: React.FC = () => {
 
   return (
     <Wrapper id="contact">
-      <Text as="h1" image={theme_pattern}>
-        Contacto
-      </Text>
+      <Title text="Contacto" image={theme_pattern}></Title>
       <ContactSection>
         <ContactLeft>
           <Text as="span" size="superLarge">

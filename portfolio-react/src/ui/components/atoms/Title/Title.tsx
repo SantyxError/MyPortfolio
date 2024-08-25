@@ -1,5 +1,5 @@
 import React from "react";
-import { TitleImg, TitleText, Wrapper } from "./Title.styled";
+import { Wrapper } from "./Title.styled";
 import Text from "../Text/Text";
 
 type TitleProps = {
