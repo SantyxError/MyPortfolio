@@ -10,4 +10,20 @@ describe("Card Component", () => {
 
     expect(titleElement).toBeInTheDocument();
   });
+
+  it("should display number, name, and description when passed as props", () => {
+    const number = "irrelevantNumber";
+    const name = "irrelevantName";
+    const description = "irrelevantDescription";
+
+    renderProvider(<Card number={number} name={name} description={number} />);
+
+    const numberElement = screen.getByText(number);
+    const nameElement = screen.getByText(name);
+    const descriptionElement = screen.getByText(description);
+
+    expect(numberElement).toBeInTheDocument();
+    expect(nameElement).toBeInTheDocument();
+    expect(descriptionElement).toBeInTheDocument();
+  });
 });

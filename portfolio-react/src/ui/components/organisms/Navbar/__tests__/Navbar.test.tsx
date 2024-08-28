@@ -6,19 +6,23 @@ import { renderProvider } from "@/__tests__/renderProvider";
 
 describe("Navbar Component", () => {
   it("should render component", () => {
+    const mockOnButtonClick = jest.fn();
+
     renderProvider(
       <Navbar
-        buttonVariant={"primary"}
-        onButtonClick={function (): void {
-          throw new Error("Function not implemented.");
-        }}
-        buttonText={""}
+        buttonVariant="primary"
+        onButtonClick={mockOnButtonClick}
+        buttonText="irrelevantButtonText" 
       />
     );
+
     const textElement = screen.getByText("Sobre mí");
     const profileImage = screen.getByAltText("Logo");
 
     expect(textElement).toBeInTheDocument();
     expect(profileImage).toBeInTheDocument();
+
+    const buttonElement = screen.getByText("irrelevantButtonText");
+    expect(buttonElement).toBeInTheDocument();
   });
 });

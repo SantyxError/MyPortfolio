@@ -8,32 +8,12 @@ export const Wrapper = styled.section`
 
 export const HeroImage = styled.img`
   margin-top: ${({ theme }) => theme.margin.xl};
-  width: 240px;
+  width: 500px;
   height: auto;
-  border-radius: 50%;
+  margin-bottom: -50px;
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    width: 260px;
+    width: 400px;
   }
-`;
-
-export const HeroH1 = styled.h1`
-  text-align: center;
-  width: 70%;
-  font-size: ${({ theme }) => theme.fontSize.xxxxxxl};
-  font-weight: 600;
-
-  ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    margin-top: ${({ theme }) => theme.margin.xl};
-    width: 90%;
-    font-size: ${({ theme }) => theme.fontSize.xxxxxl};
-  }
-`;
-
-export const HeroSpan = styled.span`
-  background: ${({ theme }) => theme.background.primary};
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 `;
 
 export const TitleWrapper = styled.div`
@@ -41,14 +21,19 @@ export const TitleWrapper = styled.div`
   padding: ${({ theme }) => theme.spacing.none}
     ${({ theme }) => theme.spacing.xxxxxl};
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
+    width: 80%;
+    padding: ${({ theme }) => theme.spacing.none}
+      ${({ theme }) => theme.spacing.l};
   }
 `;
 
 export const TextWrapper = styled.div`
   width: 45%;
+  margin: ${({ theme }) => theme.margin.xl};
   padding: ${({ theme }) => theme.spacing.s}
     ${({ theme }) => theme.spacing.xxxxxl};
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
+    padding: ${({ theme }) => theme.spacing.s} ${({ theme }) => theme.spacing.l};
   }
 `;
 

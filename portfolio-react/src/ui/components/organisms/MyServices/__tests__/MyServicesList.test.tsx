@@ -10,4 +10,22 @@ describe("MyServices Component", () => {
 
     expect(titleElement).toBeInTheDocument();
   });
+
+  it("should render services passed as props", () => {
+    const services = [
+      {
+        number: "irrelevantNumber",
+        name: "irrelevantName",
+        description: "irrelevantDescription",
+      },
+    ];
+
+    renderProvider(<MyServicesList services={services} />);
+
+    services.forEach((service) => {
+      expect(screen.getByText(service.number)).toBeInTheDocument();
+      expect(screen.getByText(service.name)).toBeInTheDocument();
+      expect(screen.getByText(service.description)).toBeInTheDocument();
+    });
+  });
 });

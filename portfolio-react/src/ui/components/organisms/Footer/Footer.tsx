@@ -17,11 +17,7 @@ import footer_logo from "../../../../assets/logo_portfolio.svg";
 import user_icon from "../../../../assets/user_icon.svg";
 import { Button } from "../../atoms/Button/Button.styled";
 
-type FooterProps = {
-  connectButtonText: string;
-};
-
-const Footer: React.FC<FooterProps> = ({ connectButtonText }) => {
+const Footer: React.FC = ({}) => {
   return (
     <Wrapper>
       <FooterTop>
@@ -40,7 +36,7 @@ const Footer: React.FC<FooterProps> = ({ connectButtonText }) => {
           <Button
             variant="primary"
             onClick={() => console.log("Connect clicked")}>
-            {connectButtonText}
+            Conecta conmigo
           </Button>
         </FooterTopRight>
       </FooterTop>

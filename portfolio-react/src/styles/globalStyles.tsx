@@ -22,6 +22,9 @@ const GlobalStyles = createGlobalStyle`
     font-weight: 400;
     margin: 0;
   }
+  p, span{
+    margin: 0;
+  }
 
   ul {
     margin: 0;

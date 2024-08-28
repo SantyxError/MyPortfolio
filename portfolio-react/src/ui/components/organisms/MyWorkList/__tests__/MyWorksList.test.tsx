@@ -10,4 +10,21 @@ describe("MyWorkList Component", () => {
     const titleElement = screen.getByText("Mis últimos trabajos");
     expect(titleElement).toBeInTheDocument();
   });
+
+  it("should render works passed as props", () => {
+    const myWorkData = [
+      {
+        title: "irrelevantTitle",
+        workImg: "irrelevantWorkImg",
+      },
+    ];
+
+    renderProvider(<MyWorksList myWorkData={myWorkData} />);
+
+    myWorkData.forEach((work) => {
+      const workImage = screen.getByAltText("Work Image");
+      expect(workImage).toBeInTheDocument();
+      expect(workImage).toHaveAttribute("src", work.workImg);
+    });
+  });
 });

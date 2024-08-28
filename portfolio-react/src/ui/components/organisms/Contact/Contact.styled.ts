@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: ${({ theme }) => theme.spacing.xxxxxl};
+  gap: ${({ theme }) => theme.spacing.xxxl};
   margin: ${({ theme }) => theme.margin.xxxxl}
     ${({ theme }) => theme.margin.xxxxxl};
 
@@ -103,7 +103,6 @@ export const ContactHtmlForm = styled.label`
   color: ${({ theme }) => theme.color.bone};
   font-size: ${({ theme }) => theme.fontSize.l};
   font-weight: 500;
-
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
     font-size: ${({ theme }) => theme.fontSize.m};
   }
@@ -119,7 +118,7 @@ export const ContactHtmlFormInput = styled.input`
   background: ${({ theme }) => theme.color.darkGrey};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.xl};
-
+  margin-bottom: ${({ theme }) => theme.margin.m};
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
     font-size: ${({ theme }) => theme.fontSize.m};
     height: ${({ theme }) => theme.spacing.xxl};

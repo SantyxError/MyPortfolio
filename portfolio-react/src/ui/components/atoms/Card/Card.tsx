@@ -16,9 +16,13 @@ export type CardProps = {
 const Card: React.FC<CardProps> = ({ number, name, description }) => {
   return (
     <ServicesFormat>
-      <Text as="h3">{number}</Text>
-      <Text as="h2">{name}</Text>
-      <Text as="p" size="large">
+      <Text as="h3" align="center">
+        {number}
+      </Text>
+      <Text as="h2" align="center">
+        {name}
+      </Text>
+      <Text as="p" size="large" align="center">
         {description}
       </Text>
       <ServicesReadmore>

@@ -8,6 +8,7 @@ interface DefaultTheme {
     bone: string;
     darkGrey: string;
     grey: string;
+    darkPurple: string;
   };
 
   background: {
@@ -131,6 +132,7 @@ export const theme: DefaultTheme = {
     bone: "#d4d4d4",
     darkGrey: "#32323b",
     grey: "#a0a0a0",
+    darkPurple: "#1f0016",
   },
 
   background: {

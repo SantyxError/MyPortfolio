@@ -32,7 +32,8 @@ export const ServicesFormat = styled.div`
 export const ServicesReadmore = styled.div`
   display: flex;
   align-items: center;
-  gap: ${({ theme }) => theme.spacing.l};
+  justify-content: center;
+  gap: ${({ theme }) => theme.spacing.l} 0;
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
     gap: ${({ theme }) => theme.spacing.m};

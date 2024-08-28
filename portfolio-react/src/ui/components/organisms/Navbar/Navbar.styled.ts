@@ -1,18 +1,17 @@
 import styled from "styled-components";
 
-
 export const Wrapper = styled.nav<{ isMenuOpen: boolean }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: ${({ theme }) => theme.margin.l} 20px;
+  padding: ${({ theme }) => theme.spacing.xl}
+    ${({ theme }) => theme.spacing.xxl};
   position: relative;
   overflow: ${({ isMenuOpen }) => (isMenuOpen ? "hidden" : "auto")};
   transition: padding 0.3s ease;
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    padding: ${({ theme }) => theme.margin.m} 25px;
-    flex-direction: column;
+    padding: ${({ theme }) => theme.margin.l} ${({ theme }) => theme.margin.l};
     align-items: flex-start;
     gap: 10px;
   }
@@ -28,7 +27,7 @@ export const NavMenu = styled.ul<{ isOpen: boolean }>`
   list-style: none;
   gap: ${({ theme }) => theme.spacing.xxl};
   font-size: ${({ theme }) => theme.fontSize.l};
-  transition: transform 0.3s ease; /* Transición suave para el menú */
+  transition: transform 0.3s ease;
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
     position: fixed;
@@ -37,8 +36,8 @@ export const NavMenu = styled.ul<{ isOpen: boolean }>`
     top: 0;
     right: 0;
     gap: 15px;
-    background-color: #1f0016;
-    width: 35%;
+    background-color: ${({ theme }) => theme.color.darkPurple};
+    width: 100%;
     height: 100%;
     z-index: 2;
     transform: ${({ isOpen }) =>
@@ -55,15 +54,28 @@ export const NavMenuItem = styled.li`
   align-items: center;
   gap: ${({ theme }) => theme.spacing.xxs};
   cursor: pointer;
-  transition: color 0.3s ease; /* Transición suave para el color si es necesario */
+  transition:
+    color 0.3s ease,
+    font-size 0.3s ease,
+    transform 0.3s ease;
+
+  &:hover {
+    color: ${({ theme }) => theme.color.purple};
+    transform: scale(1.15);
+    font-size: ${({ theme }) => theme.fontSize.xl};
+  }
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
     font-size: 20px;
     padding: 10px 0;
     flex-direction: column;
-    align-items: center;
+
     gap: ${({ theme }) => theme.spacing.xxs};
-    width: 100%;
+    width: 85%;
+
+    &:hover {
+      color: ${({ theme }) => theme.color.secondary};
+    }
   }
 `;
 
@@ -86,7 +98,6 @@ export const ImgNavMobOpen = styled.img<{ isOpen: boolean }>`
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
     display: ${({ isOpen }) => (isOpen ? "none" : "block")};
-    position: fixed;
     top: 20px;
     right: 25px;
     z-index: 3;

@@ -6,11 +6,23 @@ import { renderProvider } from "@/__tests__/renderProvider";
 
 describe("Hero Component", () => {
   it("should render component", () => {
-    renderProvider(<Hero primaryCtaText={""} secondaryCtaText={""} />);
-    const titleElement = screen.getByText("Santiago Benito");
-    const profileImage = screen.getByAltText("Profile Image");
+    renderProvider(
+      <Hero
+        primaryCtaText="irreverantPrimaryCtaText"
+        secondaryCtaText="irreverantSecondaryCtaText"
+      />
+    );
 
-    expect(titleElement).toBeInTheDocument();
+    const nameElement = screen.getByText("Santiago Benito");
+    expect(nameElement).toBeInTheDocument();
+
+    const profileImage = screen.getByAltText("Profile Image");
     expect(profileImage).toBeInTheDocument();
+
+    const primaryButton = screen.getByText("irreverantPrimaryCtaText");
+    expect(primaryButton).toBeInTheDocument();
+
+    const secondaryButton = screen.getByText("irreverantSecondaryCtaText");
+    expect(secondaryButton).toBeInTheDocument();
   });
 });

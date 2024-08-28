@@ -6,7 +6,7 @@ import { renderProvider } from "@/__tests__/renderProvider";
 
 describe("Footer Component", () => {
   it("should render component", () => {
-    renderProvider(<Footer connectButtonText="Conecta conmigo" />);
+    renderProvider(<Footer />);
     const textElement = screen.getByText("Terminos de servicio");
     expect(textElement).toBeInTheDocument();
   });

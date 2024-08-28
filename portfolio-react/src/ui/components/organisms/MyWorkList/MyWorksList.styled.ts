@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: ${({ theme }) => theme.spacing.xxxxxl};
+  gap: ${({ theme }) => theme.spacing.xxxl};
   margin: ${({ theme }) => theme.margin.xxxxl}
     ${({ theme }) => theme.margin.xxxxxl};
 

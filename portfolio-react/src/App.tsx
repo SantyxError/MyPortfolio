@@ -34,7 +34,7 @@ function App() {
       <MyServicesList services={Services} />
       <MyWorksList myWorkData={myWorkData} />
       <Contact />
-      <Footer connectButtonText="Conecta conmigo" />
+      <Footer/>
     </ThemeProvider>
   );
 }

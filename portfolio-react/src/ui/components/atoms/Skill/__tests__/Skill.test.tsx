@@ -8,13 +8,13 @@ describe("Skill Component", () => {
   it("should render component", () => {
     renderProvider(
       <Skill
-        imageSrc={"srcassetsskillscss3-original-wordmark.svg"}
-        altText={"CSS"}
-        text={"CSS"}
+        imageSrc={"irrelevantImageSrc"}
+        altText={"irrelevantAltText"}
+        text={"irrelevanText"}
       />
     );
-    const titleElement = screen.getByText("CSS");
-    const profileImage = screen.getByAltText("CSS");
+    const titleElement = screen.getByText("irrelevanText");
+    const profileImage = screen.getByAltText("irrelevantAltText");
 
     expect(titleElement).toBeInTheDocument();
     expect(profileImage).toBeInTheDocument();

@@ -1,5 +1,5 @@
 import React from "react";
-import profile_img from "../../../../assets/profileImage.jpg";
+import profile_img from "../../../../assets/profile.png";
 import {
   HeroAction,
   HeroImage,
