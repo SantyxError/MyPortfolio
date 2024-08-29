@@ -8,8 +8,8 @@ describe("Hero Component", () => {
   it("should render component", () => {
     renderProvider(
       <Hero
-        primaryCtaText="irreverantPrimaryCtaText"
-        secondaryCtaText="irreverantSecondaryCtaText"
+        primaryCtaText="irrelevantPrimaryCtaText"
+        secondaryCtaText="irrelevantSecondaryCtaText"
       />
     );
 
@@ -19,10 +19,10 @@ describe("Hero Component", () => {
     const profileImage = screen.getByAltText("Profile Image");
     expect(profileImage).toBeInTheDocument();
 
-    const primaryButton = screen.getByText("irreverantPrimaryCtaText");
+    const primaryButton = screen.getByText("irrelevantPrimaryCtaText");
     expect(primaryButton).toBeInTheDocument();
 
-    const secondaryButton = screen.getByText("irreverantSecondaryCtaText");
+    const secondaryButton = screen.getByText("irrelevantSecondaryCtaText");
     expect(secondaryButton).toBeInTheDocument();
   });
 });

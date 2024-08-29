@@ -64,7 +64,7 @@ type StylesObject = {
   span: ReturnType<typeof css>;
 };
 
-const getStylesObject = (
+const mapTypeStyles  = (
   baseStyles: ReturnType<typeof commonTextStyles>,
   theme: DefaultTheme,
   size: keyof typeof mapFontSize,
@@ -142,7 +142,7 @@ const getStyles = ({
   fontWeight,
 }: StyledTextProps): ReturnType<typeof css> => {
   const baseStyles = commonTextStyles(align, fontStyle, fontWeight);
-  const stylesObject = getStylesObject(baseStyles, theme, size!, color);
+  const stylesObject = mapTypeStyles (baseStyles, theme, size!, color);
 
   return stylesObject[as as keyof StylesObject] || css``;
 };
