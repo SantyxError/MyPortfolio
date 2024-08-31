@@ -2,13 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Button } from "../../atoms/Button/Button";
 import {
   Wrapper,
-  NavMenu,
-  NavMenuItem,
-  NavMenuItemImg,
-  ImgNavMobClose,
+  CloseIcon,
   ButtonWrapper,
-  ImgNavMobOpen,
+  HamburgerIcon,
   Logo,
+  Menu,
+  MenuItem,
 } from "./Navbar.styled";
 import underline from "../../../../assets/nav_underline.svg";
 import logo from "../../../../assets/logo_portfolio.svg";
@@ -50,97 +49,65 @@ const Navbar: React.FC<NavbarProps> = ({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const items = [
+    {
+      to: "home",
+      text: "Home",
+    },
+    {
+      to: "about",
+      text: "Sobre mí",
+    },
+    {
+      to: "services",
+      text: "Mis servicios",
+    },
+    {
+      to: "work",
+      text: "Mis trabajos",
+    },
+    {
+      to: "contact",
+      text: "Contacto",
+    },
+  ];
+
   return (
-    <Wrapper isMenuOpen={isMenuOpen}>
+    <Wrapper $isMenuOpen={isMenuOpen}>
       <Logo src={logo} alt="Logo" />
-      <ImgNavMobOpen
+      <HamburgerIcon
         src={menu_open}
         alt="Menu open"
         onClick={handleOpenMenu}
-        isOpen={isMenuOpen}
+        $isOpen={isMenuOpen}
       />
-      <NavMenu isOpen={isMenuOpen}>
-        <ImgNavMobClose src={menu_close} alt="Menu close" onClick={handleCloseMenu} />
-        <NavMenuItem>
-          <Link
-            to="home"
-            smooth={true}
-            duration={500}
-            onClick={() => {
-              setMenu("home");
-              handleCloseMenu();
-            }}>
-            <Text as="p" size="large">
-              Home
-            </Text>
-          </Link>
-          {menu === "home" ? <NavMenuItemImg src={underline} alt="" /> : null}
-        </NavMenuItem>
-        <NavMenuItem>
-          <Link
-            to="about"
-            smooth={true}
-            duration={500}
-            onClick={() => {
-              setMenu("about");
-              handleCloseMenu();
-            }}>
-            <Text as="p" size="large">
-              Sobre mí
-            </Text>
-          </Link>
-          {menu === "about" ? <NavMenuItemImg src={underline} alt="" /> : null}
-        </NavMenuItem>
-        <NavMenuItem>
-          <Link
-            to="services"
-            smooth={true}
-            duration={500}
-            onClick={() => {
-              setMenu("services");
-              handleCloseMenu();
-            }}>
-            <Text as="p" size="large">
-              Servicios
-            </Text>
-          </Link>
-          {menu === "services" ? (
-            <NavMenuItemImg src={underline} alt="" />
-          ) : null}
-        </NavMenuItem>
-        <NavMenuItem>
-          <Link
-            to="work"
-            smooth={true}
-            duration={500}
-            onClick={() => {
-              setMenu("work");
-              handleCloseMenu();
-            }}>
-            <Text as="p" size="large">
-              Mis trabajos
-            </Text>
-          </Link>
-          {menu === "work" ? <NavMenuItemImg src={underline} alt="" /> : null}
-        </NavMenuItem>
-        <NavMenuItem>
-          <Link
-            to="contact"
-            smooth={true}
-            duration={500}
-            onClick={() => {
-              setMenu("contact");
-              handleCloseMenu();
-            }}>
-            <Text as="p" size="large">
-              Contacto
-            </Text>
-          </Link>
-          {menu === "contact" ? (
-            <NavMenuItemImg src={underline} alt="" />
-          ) : null}
-        </NavMenuItem>
-      </NavMenu>
+      <Menu $isOpen={isMenuOpen}>
+        <CloseIcon
+          src={menu_close}
+          alt="Menu close"
+          onClick={handleCloseMenu}
+        />
+
+        <ul>
+          {items.map((item, index) => (
+            <MenuItem key={index}>
+              <Link
+                to={item.to}
+                smooth={true}
+                duration={500}
+                onClick={() => {
+                  setMenu(`${item.to}`);
+                  handleCloseMenu();
+                }}>
+                <Text as="p" size="large">
+                  {item.text}
+                </Text>
+              </Link>
+              {menu === item.to && <img src={underline} alt="" />}
+            </MenuItem>
+          ))}
+        </ul>
+      </Menu>
       <ButtonWrapper>
         <Button variant={buttonVariant} onClick={onButtonClick}>
           {buttonText}

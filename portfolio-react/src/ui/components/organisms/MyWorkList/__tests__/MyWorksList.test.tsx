@@ -21,10 +21,8 @@ describe("MyWorkList Component", () => {
 
     renderProvider(<MyWorksList myWorkData={myWorkData} />);
 
-    myWorkData.forEach((work) => {
-      const workImage = screen.getByAltText("Work Image");
-      expect(workImage).toBeInTheDocument();
-      expect(workImage).toHaveAttribute("src", work.workImg);
-    });
+    const workImage = screen.getByAltText("Work Image");
+    expect(workImage).toBeInTheDocument();
+    expect(workImage).toHaveAttribute("src", "irrelevantWorkImg");
   });
 });

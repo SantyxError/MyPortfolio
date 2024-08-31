@@ -5,7 +5,7 @@ import { renderProvider } from "@/__tests__/renderProvider";
 
 describe("Card Component", () => {
   it("should render component", () => {
-    renderProvider(<Card number={""} name={""} description={""} />);
+    renderProvider(<Card number="" name="" description="" />);
     const titleElement = screen.getByText("Leer más");
 
     expect(titleElement).toBeInTheDocument();
@@ -16,9 +16,11 @@ describe("Card Component", () => {
     const name = "irrelevantName";
     const description = "irrelevantDescription";
 
-    renderProvider(<Card number={number} name={name} description={number} />);
+    renderProvider(
+      <Card number={number} name={name} description={description} />
+    );
 
-    const numberElement = screen.getByText(number);
+    const numberElement = screen.getAllByText(number)[0];
     const nameElement = screen.getByText(name);
     const descriptionElement = screen.getByText(description);
 

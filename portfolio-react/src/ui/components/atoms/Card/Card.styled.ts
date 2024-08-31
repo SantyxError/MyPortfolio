@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ServicesFormat = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,7 +29,7 @@ export const ServicesFormat = styled.div`
   }
 `;
 
-export const ServicesReadmore = styled.div`
+export const Readmore = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,7 +40,7 @@ export const ServicesReadmore = styled.div`
   }
 `;
 
-export const ServicesReadmoreImg = styled.img`
+export const ReadmoreImg = styled.img`
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
     width: 16px;
   }

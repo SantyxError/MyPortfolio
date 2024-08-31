@@ -22,10 +22,8 @@ describe("MyServices Component", () => {
 
     renderProvider(<MyServicesList services={services} />);
 
-    services.forEach((service) => {
-      expect(screen.getByText(service.number)).toBeInTheDocument();
-      expect(screen.getByText(service.name)).toBeInTheDocument();
-      expect(screen.getByText(service.description)).toBeInTheDocument();
-    });
+    expect(screen.getByText("irrelevantNumber")).toBeInTheDocument();
+    expect(screen.getByText("irrelevantName")).toBeInTheDocument();
+    expect(screen.getByText("irrelevantDescription")).toBeInTheDocument();
   });
 });

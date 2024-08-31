@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  ServicesFormat,
-  ServicesReadmore,
-  ServicesReadmoreImg,
-} from "./Card.styled";
+import { Readmore, ReadmoreImg, Wrapper } from "./Card.styled";
 import arrow_icon from "../../../../assets/arrow_icon.svg";
 import Text from "../Text/Text";
 
@@ -15,7 +11,7 @@ export type CardProps = {
 
 const Card: React.FC<CardProps> = ({ number, name, description }) => {
   return (
-    <ServicesFormat>
+    <Wrapper>
       <Text as="h3" align="center">
         {number}
       </Text>
@@ -25,13 +21,13 @@ const Card: React.FC<CardProps> = ({ number, name, description }) => {
       <Text as="p" size="large" align="center">
         {description}
       </Text>
-      <ServicesReadmore>
+      <Readmore>
         <Text as="span" size="medium" color="white">
           Leer más
         </Text>
-        <ServicesReadmoreImg src={arrow_icon} alt="Leer más" />
-      </ServicesReadmore>
-    </ServicesFormat>
+        <ReadmoreImg src={arrow_icon} alt="Leer más" />
+      </Readmore>
+    </Wrapper>
   );
 };
 

@@ -3,21 +3,19 @@ import styled from "styled-components";
 export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   gap: ${({ theme }) => theme.spacing.xxxl};
-  margin: ${({ theme }) => theme.margin.xxl}
-    ${({ theme }) => theme.margin.xxxxxl};
+  padding: ${({ theme }) => theme.spacing.xl} ${({ theme }) => theme.spacing.xl};
+  align-items: center;
 
-  ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    margin: ${({ theme }) => theme.margin.xxl}
-      ${({ theme }) => theme.margin.xxxxl};
+  ${({ theme }) => theme.mediaQueries.desktop} {
+    padding: ${({ theme }) => theme.spacing.xxxxl}
+      ${({ theme }) => theme.spacing.xxxxxl};
     gap: ${({ theme }) => theme.spacing.xl};
-    align-items: start;
   }
 `;
 
-export const AboutSections = styled.div`
+export const Sections = styled.div`
   display: flex;
   gap: ${({ theme }) => theme.spacing.xxxxl};
   align-items: stretch;
@@ -27,7 +25,7 @@ export const AboutSections = styled.div`
   }
 `;
 
-export const AboutLeftImg = styled.img`
+export const Image = styled.img`
   border-radius: ${({ theme }) => theme.borderRadius.m};
   height: 100%;
   width: 40%;
@@ -37,17 +35,12 @@ export const AboutLeftImg = styled.img`
   }
 `;
 
-export const AboutRight = styled.div`
+export const Paragraph = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 800px;
   display: flex;
   align-items: center;
   justify-content: center;
-`;
-
-export const AboutParagraph = styled.div`
-  display: flex;
-  flex-direction: column;
   gap: ${({ theme }) => theme.spacing.s};
 `;

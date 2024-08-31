@@ -1,8 +1,8 @@
 import React from "react";
 import profile_img from "../../../../assets/profile.png";
 import {
-  HeroAction,
-  HeroImage,
+  CtaWrapper,
+  Image,
   TextWrapper,
   TitleWrapper,
   Wrapper,
@@ -18,10 +18,10 @@ type ctasTexts = {
 const Hero: React.FC<ctasTexts> = ({ primaryCtaText, secondaryCtaText }) => {
   return (
     <Wrapper id="home">
-      <HeroImage src={profile_img} alt="Profile Image" />
+      <Image src={profile_img} alt="Profile Image" />
       <TitleWrapper>
         <Text as="p" align="center" fontWeight="bold" size="superLarge">
-          Soy {}
+          Soy
           <Text as="span" align="center" fontWeight="bold" size="superLarge">
             Santiago Benito
           </Text>
@@ -35,7 +35,7 @@ const Hero: React.FC<ctasTexts> = ({ primaryCtaText, secondaryCtaText }) => {
           nuevos desafíos y encontrar formas creativas de abordarlos.
         </Text>
       </TextWrapper>
-      <HeroAction>
+      <CtaWrapper>
         <Button
           variant="primary"
           onClick={() => console.log("Connect clicked")}>
@@ -46,7 +46,7 @@ const Hero: React.FC<ctasTexts> = ({ primaryCtaText, secondaryCtaText }) => {
           onClick={() => console.log("Resume clicked")}>
           {secondaryCtaText}
         </Button>
-      </HeroAction>
+      </CtaWrapper>
     </Wrapper>
   );
 };

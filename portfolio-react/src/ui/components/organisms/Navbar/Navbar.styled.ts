@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.nav<{ isMenuOpen: boolean }>`
+export const Wrapper = styled.nav<{ $isMenuOpen: boolean }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: ${({ theme }) => theme.spacing.xl}
     ${({ theme }) => theme.spacing.xxl};
   position: relative;
-  overflow: ${({ isMenuOpen }) => (isMenuOpen ? "hidden" : "auto")};
+  overflow: ${({ $isMenuOpen }) => ($isMenuOpen ? "hidden" : "auto")};
   transition: padding 0.3s ease;
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
@@ -21,7 +21,7 @@ export const Logo = styled.img`
   width: 10rem;
 `;
 
-export const NavMenu = styled.ul<{ isOpen: boolean }>`
+export const Menu = styled.div<{ $isOpen: boolean }>`
   display: flex;
   align-items: center;
   list-style: none;
@@ -29,26 +29,32 @@ export const NavMenu = styled.ul<{ isOpen: boolean }>`
   font-size: ${({ theme }) => theme.fontSize.l};
   transition: transform 0.3s ease;
 
+  ul {
+    width: 100%;
+
+    ${({ theme }) => theme.mediaQueries.desktop} {
+      display: flex;
+      gap: ${({ theme }) => theme.spacing.xxl};
+    }
+  }
+
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
     position: fixed;
     flex-direction: column;
-    align-items: flex-start;
     top: 0;
     right: 0;
-    gap: 15px;
     background-color: ${({ theme }) => theme.color.darkPurple};
     width: 100%;
     height: 100%;
-    z-index: 2;
-    transform: ${({ isOpen }) =>
-      isOpen ? "translateX(0)" : "translateX(100%)"};
-    padding: 20px;
+    z-index: 1;
+    transform: ${({ $isOpen }) =>
+      $isOpen ? "translateX(0)" : "translateX(100%)"};
     padding-top: 70px;
     overflow-y: auto;
   }
 `;
 
-export const NavMenuItem = styled.li`
+export const MenuItem = styled.li`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,18 +75,12 @@ export const NavMenuItem = styled.li`
     font-size: 20px;
     padding: 10px 0;
     flex-direction: column;
-
     gap: ${({ theme }) => theme.spacing.xxs};
-    width: 85%;
 
     &:hover {
       color: ${({ theme }) => theme.color.secondary};
     }
   }
-`;
-
-export const NavMenuItemImg = styled.img`
-  display: flex;
 `;
 
 export const ButtonWrapper = styled.div`
@@ -92,19 +92,19 @@ export const ButtonWrapper = styled.div`
   }
 `;
 
-export const ImgNavMobOpen = styled.img<{ isOpen: boolean }>`
+export const HamburgerIcon = styled.img<{ $isOpen: boolean }>`
   display: none;
   cursor: pointer;
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    display: ${({ isOpen }) => (isOpen ? "none" : "block")};
+    display: ${({ $isOpen }) => ($isOpen ? "none" : "block")};
     top: 20px;
     right: 25px;
     z-index: 3;
   }
 `;
 
-export const ImgNavMobClose = styled.img`
+export const CloseIcon = styled.img`
   display: none;
   cursor: pointer;
 
@@ -112,8 +112,8 @@ export const ImgNavMobClose = styled.img`
     display: block;
     position: absolute;
     top: 20px;
-    right: 20px;
+    right: 30px;
     width: 30px;
-    z-index: 3;
+    z-index: 2;
   }
 `;

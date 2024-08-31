@@ -1,18 +1,18 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.footer`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing.l};
-  margin: ${({ theme }) => theme.margin.xxxxl}
-    ${({ theme }) => theme.margin.xxxxxl};
+  padding: 50px 70px;
 
-  ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    margin: 50px 70px;
+  ${({ theme }) => theme.mediaQueries.desktop} {
+    padding: ${({ theme }) => theme.spacing.xxxxl}
+      ${({ theme }) => theme.spacing.xxxxxl};
   }
 `;
 
-export const FooterTop = styled.div`
+export const Top = styled.div`
   display: flex;
   justify-content: space-between;
 
@@ -22,15 +22,17 @@ export const FooterTop = styled.div`
   }
 `;
 
-export const FooterTopLeft = styled.div`
-  width: 30%;
-`;
+export const Description = styled.div`
+  img {
+    width: 10rem;
+    display: flex;
+    align-items: center;
+    gap: ${({ theme }) => theme.spacing.xxxxxl};
+  }
 
-export const FooterTopLeftImg = styled.img`
-  width: 10rem;
-  display: flex;
-  align-items: center;
-  gap: ${({ theme }) => theme.spacing.xxxxxl};
+  ${({ theme }) => theme.mediaQueries.desktop} {
+    width: 30%;
+  }
 `;
 
 export const FooterTopLeftParagraph = styled.p`
@@ -39,66 +41,27 @@ export const FooterTopLeftParagraph = styled.p`
   max-width: 400px;
 `;
 
-export const FooterEmail = styled.div`
+export const Bottom = styled.div`
   display: flex;
-  gap: ${({ theme }) => theme.spacing.xxl};
-  padding: ${({ theme }) => theme.spacing.m} ${({ theme }) => theme.spacing.l};
-  border-radius: ${({ theme }) => theme.borderRadius.xxl};
-  background: ${({ theme }) => theme.color.darkGrey};
-  padding-right: ${({ theme }) => theme.spacing.xxxxxl};
-
-  ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    gap: ${({ theme }) => theme.spacing.l};
-    padding: ${({ theme }) => theme.spacing.s} ${({ theme }) => theme.spacing.m};
-  }
-`;
-
-export const FooterEmailInput = styled.input`
-  outline: none;
-  border: none;
-  background: transparent;
-  color: ${({ theme }) => theme.color.grey};
-  font-family: ${({ theme }) => theme.fontFamily.primary};
-  font-size: ${({ theme }) => theme.fontSize.l};
-
-  &:hover {
-    border: ${({ theme }) => theme.border.xxs} solid
-      ${({ theme }) => theme.color.white};
-  }
-`;
-
-export const FooterEmailInputImage = styled.img``;
-
-export const FooterTopRight = styled.div`
-  display: flex;
-  align-items: center;
-  gap: ${({ theme }) => theme.spacing.xl};
-
-  ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    flex-direction: column;
-    align-items: start;
-    gap: ${({ theme }) => theme.spacing.l};
-  }
-`;
-
-export const FooterBottom = styled.div`
-  display: flex;
+  flex-direction: column-reverse;
   justify-content: space-between;
   font-size: ${({ theme }) => theme.fontSize.l};
 
-  ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    display: flex;
-    flex-direction: column-reverse;
-    margin-bottom: ${({ theme }) => theme.margin.xxxxl};
+  ${({ theme }) => theme.mediaQueries.desktop} {
+    flex-direction: row;
   }
 `;
 
-export const FooterBottomLeft = styled.div``;
-
-export const FooterBottomRight = styled.div`
+export const LegalItems = styled.ul`
   display: flex;
-  gap: ${({ theme }) => theme.spacing.xxl};
+  flex-direction: column-reverse;
+  gap: ${({ theme }) => theme.spacing.m};
   margin-bottom: ${({ theme }) => theme.margin.xxl};
+
+  ${({ theme }) => theme.mediaQueries.desktop} {
+    flex-direction: row;
+    gap: ${({ theme }) => theme.spacing.xxl};
+  }
 `;
 
 export const Divider = styled.div`

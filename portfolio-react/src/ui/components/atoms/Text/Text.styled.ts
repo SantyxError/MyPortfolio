@@ -64,7 +64,7 @@ type StylesObject = {
   span: ReturnType<typeof css>;
 };
 
-const mapTypeStyles  = (
+const mapTypeStyles = (
   baseStyles: ReturnType<typeof commonTextStyles>,
   theme: DefaultTheme,
   size: keyof typeof mapFontSize,
@@ -106,6 +106,10 @@ const mapTypeStyles  = (
     font-size: ${!!size && mapFontSize[size]};
     line-height: ${theme.lineHeight.m};
     margin: ${theme.margin.xs};
+    ${color &&
+    css`
+      color: ${({ theme }) => theme.color[color]};
+    `}
 
     ${theme.mediaQueries.mobileAndTablet} {
       font-size: ${!!size && mapFontSizeMobile[size]};
@@ -115,7 +119,7 @@ const mapTypeStyles  = (
     ${baseStyles}
     ${color
       ? css`
-          color: ${color};
+          color: ${({ theme }) => theme.color[color]};
         `
       : css`
           background: ${theme.background.primary};
@@ -142,10 +146,15 @@ const getStyles = ({
   fontWeight,
 }: StyledTextProps): ReturnType<typeof css> => {
   const baseStyles = commonTextStyles(align, fontStyle, fontWeight);
-  const stylesObject = mapTypeStyles (baseStyles, theme, size!, color);
+  const stylesObject = mapTypeStyles(baseStyles, theme, size!, color);
 
   return stylesObject[as as keyof StylesObject] || css``;
 };
+
+export const Wrapper = styled.div`
+  position: relative;
+  margin-bottom: ${({ theme }) => theme.margin.s};
+`;
 
 export const TitleImg = styled.img`
   position: absolute;

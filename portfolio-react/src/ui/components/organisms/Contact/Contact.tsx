@@ -7,17 +7,15 @@ import call_icon from "../../../../assets/call_icon.svg";
 import { Button } from "../../atoms/Button/Button";
 import Text from "../../atoms/Text/Text";
 import {
-  ContactSection,
-  ContactLeft,
-  ContactLeftParagraph,
-  ContactDetails,
-  ContactDetail,
-  ContactRight,
-  ContactDetailImg,
-  ContactHtmlFormInput,
-  ContactHtmlFormTextArea,
+  Section,
+  Info,
+  InfoDetails,
+  Detail,
+  Form,
+  DetailImg,
+  Input,
+  TextArea,
 } from "./Contact.styled";
-import Title from "../../atoms/Title/Title";
 
 const Contact: React.FC = () => {
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -53,44 +51,46 @@ const Contact: React.FC = () => {
 
   return (
     <Wrapper id="contact">
-      <Title text="Contacto" image={theme_pattern}></Title>
-      <ContactSection>
-        <ContactLeft>
+      <Text as="h1" image={theme_pattern}>
+        Contacto
+      </Text>
+      <Section>
+        <Info>
           <Text as="span" size="superLarge">
             ¡Hablemos!
           </Text>
-          <ContactLeftParagraph>
-            <Text as="p" align="left" size="large">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              molestie dui turpis, ac malesuada mauris convallis ut.
-            </Text>
-          </ContactLeftParagraph>
-          <ContactDetails>
-            <ContactDetail>
-              <ContactDetailImg src={mail_icon} alt="Email Icon" />
+
+          <Text as="p" align="left" size="large" color="bone">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+            molestie dui turpis, ac malesuada mauris convallis ut.
+          </Text>
+
+          <InfoDetails>
+            <Detail>
+              <DetailImg src={mail_icon} alt="Email Icon" />
               <Text as="span" align="left" size="large" color="bone">
                 email@gmail.com
               </Text>
-            </ContactDetail>
-            <ContactDetail>
-              <ContactDetailImg src={call_icon} alt="Call Icon" />
+            </Detail>
+            <Detail>
+              <DetailImg src={call_icon} alt="Call Icon" />
               <Text as="span" align="left" size="large" color="bone">
                 +1234-56-78
               </Text>
-            </ContactDetail>
-            <ContactDetail>
-              <ContactDetailImg src={location_icon} alt="Location Icon" />
+            </Detail>
+            <Detail>
+              <DetailImg src={location_icon} alt="Location Icon" />
               <Text as="span" align="left" size="large" color="bone">
                 Valencia, España
               </Text>
-            </ContactDetail>
-          </ContactDetails>
-        </ContactLeft>
-        <ContactRight onSubmit={onSubmit}>
+            </Detail>
+          </InfoDetails>
+        </Info>
+        <Form onSubmit={onSubmit}>
           <Text as="p" align="left" size="medium">
             Tu nombre
           </Text>
-          <ContactHtmlFormInput
+          <Input
             type="text"
             placeholder="Introduce tu nombre"
             name="name"
@@ -99,7 +99,7 @@ const Contact: React.FC = () => {
           <Text as="p" align="left" size="medium">
             Tu email
           </Text>
-          <ContactHtmlFormInput
+          <Input
             type="email"
             placeholder="Introduce tu email"
             name="email"
@@ -108,15 +108,15 @@ const Contact: React.FC = () => {
           <Text as="p" align="left" size="medium">
             Escribe tu mensaje aquí
           </Text>
-          <ContactHtmlFormTextArea
+          <TextArea
             name="message"
             rows={8}
             placeholder="Introduce tu mensaje"
             required
           />
           <Button variant="primary">Enviar mensaje</Button>
-        </ContactRight>
-      </ContactSection>
+        </Form>
+      </Section>
     </Wrapper>
   );
 };

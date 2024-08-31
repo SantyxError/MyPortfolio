@@ -8,7 +8,11 @@ describe("Contact Component", () => {
   it("should render component", () => {
     renderProvider(<Contact />);
     const titleElement = screen.getByText("Contacto");
+    const emailElement = screen.getByText("email@gmail.com");
+    const inputElement = screen.getByText("Tu nombre");
 
     expect(titleElement).toBeInTheDocument();
+    expect(emailElement).toBeInTheDocument();
+    expect(inputElement).toBeInTheDocument();
   });
 });

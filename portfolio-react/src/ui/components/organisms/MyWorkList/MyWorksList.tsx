@@ -1,12 +1,8 @@
 import React from "react";
-import Title from "../../atoms/Title/Title";
+import Text from "../../atoms/Text/Text";
 import theme_pattern from "../../../../assets/theme_pattern.svg";
 import arrow_icon from "../../../../assets/arrow_icon.svg";
-import {
-  Wrapper,
-  MyWorkContainer,
-  MyWorkContainerImg,
-} from "./MyWorksList.styled";
+import { Wrapper, Container } from "./MyWorksList.styled";
 import { Button } from "../../atoms/Button/Button.styled";
 
 type WorkData = {
@@ -21,14 +17,14 @@ type MyWorksListProps = {
 const MyWorksList: React.FC<MyWorksListProps> = ({ myWorkData }) => {
   return (
     <Wrapper id="work">
-      <Title text="Mis últimos trabajos" image={theme_pattern} />
-      <MyWorkContainer>
+      <Text as="h1" image={theme_pattern}>
+        Mis últimos trabajos
+      </Text>
+      <Container>
         {myWorkData.map((work, index) => (
-          <MyWorkContainerImg key={index} src={work.workImg} alt="Work Image" />
+          <img key={index} src={work.workImg} alt="Work Image" />
         ))}
-      </MyWorkContainer>
-
-      {/* Botón Mostrar Más */}
+      </Container>
       <Button
         variant="terciary"
         onClick={() => console.log("Mostrar más clicked")}>

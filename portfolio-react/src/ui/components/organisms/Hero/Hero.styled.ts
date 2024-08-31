@@ -4,49 +4,57 @@ export const Wrapper = styled.section`
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding: ${({ theme }) => theme.spacing.xl} ${({ theme }) => theme.spacing.xl};
+
+  ${({ theme }) => theme.mediaQueries.desktop} {
+    padding: ${({ theme }) => theme.spacing.xxxxl}
+      ${({ theme }) => theme.spacing.xxxxxl};
+  }
 `;
 
-export const HeroImage = styled.img`
+export const Image = styled.img`
   margin-top: ${({ theme }) => theme.margin.xl};
-  width: 500px;
+  width: 400px;
   height: auto;
   margin-bottom: -50px;
-  ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    width: 400px;
+
+  ${({ theme }) => theme.mediaQueries.desktop} {
+    width: 500px;
   }
 `;
 
 export const TitleWrapper = styled.div`
-  width: 60%;
+  width: 80%;
   padding: ${({ theme }) => theme.spacing.none}
-    ${({ theme }) => theme.spacing.xxxxxl};
-  ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    width: 80%;
+    ${({ theme }) => theme.spacing.l};
+
+  ${({ theme }) => theme.mediaQueries.desktop} {
+    width: 60%;
     padding: ${({ theme }) => theme.spacing.none}
-      ${({ theme }) => theme.spacing.l};
+      ${({ theme }) => theme.spacing.xxxxxl};
   }
 `;
 
 export const TextWrapper = styled.div`
-  width: 45%;
   margin: ${({ theme }) => theme.margin.xl};
-  padding: ${({ theme }) => theme.spacing.s}
-    ${({ theme }) => theme.spacing.xxxxxl};
-  ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    padding: ${({ theme }) => theme.spacing.s} ${({ theme }) => theme.spacing.l};
+
+  ${({ theme }) => theme.mediaQueries.desktop} {
+    width: 45%;
+    padding: ${({ theme }) => theme.spacing.s}
+      ${({ theme }) => theme.spacing.xxxxxl};
   }
 `;
 
-export const HeroAction = styled.div`
+export const CtaWrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: ${({ theme }) => theme.spacing.xl};
   font-size: ${({ theme }) => theme.fontSize.xl};
   font-weight: 500;
-  margin-bottom: ${({ theme }) => theme.margin.xxxl};
+  margin-bottom: ${({ theme }) => theme.margin.xl};
+  gap: ${({ theme }) => theme.spacing.l};
 
-  ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    margin-bottom: ${({ theme }) => theme.margin.xl};
-    gap: ${({ theme }) => theme.spacing.l};
+  ${({ theme }) => theme.mediaQueries.desktop} {
+    margin-bottom: ${({ theme }) => theme.margin.xxxl};
+    gap: ${({ theme }) => theme.spacing.xl};
   }
 `;

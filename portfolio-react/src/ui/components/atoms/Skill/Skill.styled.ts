@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SkillWrapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,7 +13,7 @@ export const SkillWrapper = styled.div`
   }
 `;
 
-export const SkillImage = styled.img`
+export const Image = styled.img`
   width: 4rem;
   height: 4rem;
   padding: ${({ theme }) => theme.spacing.s};
@@ -27,7 +27,7 @@ export const SkillImage = styled.img`
   border-image-source: ${({ theme }) => theme.background.secondary};
   transition: transform 0.3s ease-in-out;
 
-  ${SkillWrapper}:hover & {
+  &:hover {
     transform: scale(1.1);
   }
 `;

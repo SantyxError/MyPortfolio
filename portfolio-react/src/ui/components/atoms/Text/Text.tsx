@@ -1,6 +1,9 @@
 import React, { ReactNode } from "react";
-import { Text as TextComponent } from "./Text.styled";
-import { TitleImg } from "../Title/Title.styled";
+import {
+  Text as TextComponent,
+  Wrapper as WrapperCommponent,
+  TitleImg,
+} from "./Text.styled";
 
 type Tag = "p" | "span" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 type Size = "default" | "small" | "medium" | "large" | "xlarge" | "superLarge";
@@ -21,6 +24,17 @@ export type TextProps = {
   color?: Color;
 };
 
+const Wrapper: React.FC<{ children: ReactNode; hasImage: boolean }> = ({
+  children,
+  hasImage,
+}) => {
+  if (hasImage) {
+    return <WrapperCommponent>{children}</WrapperCommponent>;
+  }
+
+  return <>{children}</>;
+};
+
 const Text: React.FC<TextProps> = ({
   children,
   as = "span",
@@ -33,7 +47,7 @@ const Text: React.FC<TextProps> = ({
   color,
 }) => {
   return (
-    <>
+    <Wrapper hasImage={!!image}>
       <TextComponent
         as={as}
         className={className}
@@ -47,7 +61,7 @@ const Text: React.FC<TextProps> = ({
       </TextComponent>
 
       {image && <TitleImg src={image} alt="" />}
-    </>
+    </Wrapper>
   );
 };
 

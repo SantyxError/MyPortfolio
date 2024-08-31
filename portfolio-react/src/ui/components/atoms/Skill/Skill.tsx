@@ -1,5 +1,5 @@
 import React from "react";
-import { SkillWrapper, SkillImage } from "./Skill.styled";
+import { Wrapper, Image } from "./Skill.styled";
 import Text from "../../atoms/Text/Text";
 
 type SkillProps = {
@@ -10,12 +10,12 @@ type SkillProps = {
 
 const Skill: React.FC<SkillProps> = ({ imageSrc, altText, text }) => {
   return (
-    <SkillWrapper data-testid="skill-wrapper">
-      <SkillImage src={imageSrc} alt={altText} data-testid="skill-image" />
+    <Wrapper>
+      <Image src={imageSrc} alt={altText} />
       <Text as="p" align="center" size="medium">
         {text}
       </Text>
-    </SkillWrapper>
+    </Wrapper>
   );
 };
 

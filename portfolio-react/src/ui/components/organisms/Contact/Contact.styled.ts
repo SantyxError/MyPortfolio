@@ -5,17 +5,17 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: ${({ theme }) => theme.spacing.xxxl};
-  margin: ${({ theme }) => theme.margin.xxxxl}
-    ${({ theme }) => theme.margin.xxxxxl};
+  margin: ${({ theme }) => theme.margin.xxs} ${({ theme }) => theme.margin.l};
+  gap: ${({ theme }) => theme.spacing.none};
 
-  ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    margin: ${({ theme }) => theme.margin.xxs} ${({ theme }) => theme.margin.l};
-    gap: ${({ theme }) => theme.spacing.none};
+  ${({ theme }) => theme.mediaQueries.desktop} {
+    gap: ${({ theme }) => theme.spacing.xxxl};
+    margin: ${({ theme }) => theme.margin.xxxxl}
+      ${({ theme }) => theme.margin.xxxxxl};
   }
 `;
 
-export const ContactSection = styled.div`
+export const Section = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: ${({ theme }) => theme.spacing.xxxxxl};
@@ -27,7 +27,7 @@ export const ContactSection = styled.div`
   }
 `;
 
-export const ContactLeft = styled.div`
+export const Info = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -40,52 +40,39 @@ export const ContactLeft = styled.div`
   }
 `;
 
-export const ContactLeftParagraph = styled.div`
-  max-width: 100%;
-  color: ${({ theme }) => theme.color.bone};
-  font-size: ${({ theme }) => theme.fontSize.l};
-  line-height: ${({ theme }) => theme.lineHeight.l};
-
-  ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    font-size: ${({ theme }) => theme.fontSize.m};
-    line-height: ${({ theme }) => theme.lineHeight.m};
-  }
-`;
-
-export const ContactDetails = styled.div`
+export const InfoDetails = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing.xxl};
   color: ${({ theme }) => theme.color.bone};
-  font-size: ${({ theme }) => theme.fontSize.l};
-  margin-top: ${({ theme }) => theme.margin.m};
+  font-size: ${({ theme }) => theme.fontSize.m};
+  margin-top: ${({ theme }) => theme.margin.s};
 
-  ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    font-size: ${({ theme }) => theme.fontSize.m};
-    margin-top: ${({ theme }) => theme.margin.s};
+  ${({ theme }) => theme.mediaQueries.desktop} {
+    font-size: ${({ theme }) => theme.fontSize.l};
+    margin-top: ${({ theme }) => theme.margin.m};
   }
 `;
 
-export const ContactDetail = styled.div`
+export const Detail = styled.div`
   display: flex;
   align-items: center;
-  gap: ${({ theme }) => theme.spacing.l};
+  gap: ${({ theme }) => theme.spacing.m};
 
-  ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    align-items: center;
-    gap: ${({ theme }) => theme.spacing.m};
+  ${({ theme }) => theme.mediaQueries.desktop} {
+    gap: ${({ theme }) => theme.spacing.l};
   }
 `;
 
-export const ContactDetailImg = styled.img`
-  width: 25px;
+export const DetailImg = styled.img`
+  width: 20px;
 
-  ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    width: 20px;
+  ${({ theme }) => theme.mediaQueries.desktop} {
+    width: 25px;
   }
 `;
 
-export const ContactRight = styled.form`
+export const Form = styled.form`
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -99,16 +86,7 @@ export const ContactRight = styled.form`
   }
 `;
 
-export const ContactHtmlForm = styled.label`
-  color: ${({ theme }) => theme.color.bone};
-  font-size: ${({ theme }) => theme.fontSize.l};
-  font-weight: 500;
-  ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    font-size: ${({ theme }) => theme.fontSize.m};
-  }
-`;
-
-export const ContactHtmlFormInput = styled.input`
+export const Input = styled.input`
   color: #a0a0a0;
   border: none;
   width: 100%;
@@ -125,7 +103,7 @@ export const ContactHtmlFormInput = styled.input`
   }
 `;
 
-export const ContactHtmlFormTextArea = styled.textarea`
+export const TextArea = styled.textarea`
   color: ${({ theme }) => theme.color.grey};
   border: none;
   width: 100%;
