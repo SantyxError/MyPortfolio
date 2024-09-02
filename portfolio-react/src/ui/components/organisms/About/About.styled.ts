@@ -4,7 +4,7 @@ export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: ${({ theme }) => theme.spacing.xxxl};
+  gap: ${({ theme }) => theme.spacing.xl};
   padding: ${({ theme }) => theme.spacing.xl} ${({ theme }) => theme.spacing.xl};
   align-items: center;
 
@@ -21,6 +21,7 @@ export const Sections = styled.div`
   align-items: stretch;
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
+    gap: ${({ theme }) => theme.spacing.xxxxl};
     flex-direction: column;
   }
 `;

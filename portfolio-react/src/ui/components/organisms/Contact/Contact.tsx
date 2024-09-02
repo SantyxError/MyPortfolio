@@ -1,5 +1,4 @@
 import React from "react";
-import { Wrapper } from "../About/About.styled";
 import theme_pattern from "../../../../assets/theme_pattern.svg";
 import mail_icon from "../../../../assets/mail_icon.svg";
 import location_icon from "../../../../assets/location_icon.svg";
@@ -15,6 +14,7 @@ import {
   DetailImg,
   Input,
   TextArea,
+  Wrapper,
 } from "./Contact.styled";
 
 const Contact: React.FC = () => {

@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: ${({ theme }) => theme.margin.xxs} ${({ theme }) => theme.margin.l};
-  gap: ${({ theme }) => theme.spacing.none};
+  gap: ${({ theme }) => theme.spacing.xl};
+  padding: ${({ theme }) => theme.spacing.xl} ${({ theme }) => theme.spacing.xl};
 
   ${({ theme }) => theme.mediaQueries.desktop} {
     gap: ${({ theme }) => theme.spacing.xxxl};

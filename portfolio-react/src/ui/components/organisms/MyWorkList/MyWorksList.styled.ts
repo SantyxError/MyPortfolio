@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   padding: ${({ theme }) => theme.spacing.xl} ${({ theme }) => theme.spacing.xl};
-  gap: ${({ theme }) => theme.spacing.xxl};
+  gap: ${({ theme }) => theme.spacing.xl};
 
   ${({ theme }) => theme.mediaQueries.desktop} {
     gap: ${({ theme }) => theme.spacing.xxxl};

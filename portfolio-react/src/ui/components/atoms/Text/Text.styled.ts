@@ -78,7 +78,7 @@ const mapTypeStyles = (
     font-weight: 600;
 
     ${theme.mediaQueries.mobileAndTablet} {
-      font-size: ${!!size && mapFontSizeMobile[size]};
+      font-size: ${theme.fontSize.xxxl};
       padding: ${theme.spacing.none};
     }
   `,

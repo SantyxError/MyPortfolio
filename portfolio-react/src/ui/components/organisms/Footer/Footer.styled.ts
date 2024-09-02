@@ -5,10 +5,12 @@ export const Wrapper = styled.footer`
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing.l};
   padding: 50px 70px;
+  text-align: center;
 
   ${({ theme }) => theme.mediaQueries.desktop} {
     padding: ${({ theme }) => theme.spacing.xxxxl}
       ${({ theme }) => theme.spacing.xxxxxl};
+    text-align: left;
   }
 `;
 
@@ -23,15 +25,26 @@ export const Top = styled.div`
 `;
 
 export const Description = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+
   img {
     width: 10rem;
     display: flex;
     align-items: center;
-    gap: ${({ theme }) => theme.spacing.xxxxxl};
+
+    ${({ theme }) => theme.mediaQueries.desktop} {
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
   }
 
   ${({ theme }) => theme.mediaQueries.desktop} {
     width: 30%;
+    align-items: flex-start;
   }
 `;
 
@@ -46,9 +59,19 @@ export const Bottom = styled.div`
   flex-direction: column-reverse;
   justify-content: space-between;
   font-size: ${({ theme }) => theme.fontSize.l};
+  text-align: center;
+
+  p {
+    text-align: center;
+
+    ${({ theme }) => theme.mediaQueries.desktop} {
+      text-align: left;
+    }
+  }
 
   ${({ theme }) => theme.mediaQueries.desktop} {
     flex-direction: row;
+    text-align: left;
   }
 `;
 

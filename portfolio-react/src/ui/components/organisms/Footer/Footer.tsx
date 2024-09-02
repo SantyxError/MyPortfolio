@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
       <Top>
         <Description>
           <img src={footer_logo} alt="Footer Logo" />
-          <Text as="p" align="left" size="medium">
+          <Text as="p" size="medium">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
             molestie dui turpis, ac malesuada mauris convallis ut.
           </Text>
@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
       </Top>
       <Divider />
       <Bottom>
-        <Text as="p" align="left" size="medium">
+        <Text as="p" size="medium">
           © {new Date().getFullYear()} Santiago Benito. Todos los derechos
           reservados.
         </Text>
