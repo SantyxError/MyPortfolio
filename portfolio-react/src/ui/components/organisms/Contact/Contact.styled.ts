@@ -11,8 +11,11 @@ export const Wrapper = styled.section`
 
   ${({ theme }) => theme.mediaQueries.desktop} {
     gap: ${({ theme }) => theme.spacing.xxxl};
-    margin: ${({ theme }) => theme.margin.xxxxl}
-      ${({ theme }) => theme.margin.xxxxxl};
+    padding: ${({ theme }) => theme.spacing.xxxxl}
+      ${({ theme }) => theme.spacing.xxxxxl}
+      ${({ theme }) => theme.spacing.none}
+      ${({ theme }) => theme.spacing.xxxxxl};
+  }
   }
 `;
 

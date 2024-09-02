@@ -22,10 +22,11 @@ export const Wrapper = styled.div`
   }
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
-    align-items: start;
-    gap:  ${({ theme }) => theme.spacing.s};
-    padding:  ${({ theme }) => theme.spacing.m}
+    align-items: center; // Cambiado a center para centrar el contenido en móvil
+    gap: ${({ theme }) => theme.spacing.s};
+    padding: ${({ theme }) => theme.spacing.m};
     border-radius: ${({ theme }) => theme.borderRadius.s};
+    text-align: center; // Centrar el texto en dispositivos móviles
   }
 `;
 
@@ -33,7 +34,7 @@ export const Readmore = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: ${({ theme }) => theme.spacing.l} 0;
+  gap: ${({ theme }) => theme.spacing.l};
 
   ${({ theme }) => theme.mediaQueries.mobileAndTablet} {
     gap: ${({ theme }) => theme.spacing.m};

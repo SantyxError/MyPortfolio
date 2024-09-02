@@ -10,7 +10,9 @@ export const Wrapper = styled.div`
 
   ${({ theme }) => theme.mediaQueries.desktop} {
     gap: ${({ theme }) => theme.spacing.xxxl};
-    padding: ${({ theme }) => theme.spacing.xxxxl}
+    padding: ${({ theme }) => theme.spacing.none}
+      ${({ theme }) => theme.spacing.xxxxxl}
+      ${({ theme }) => theme.spacing.none}
       ${({ theme }) => theme.spacing.xxxxxl};
   }
 `;
