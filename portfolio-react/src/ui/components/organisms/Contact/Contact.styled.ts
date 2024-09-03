@@ -16,7 +16,6 @@ export const Wrapper = styled.section`
       ${({ theme }) => theme.spacing.none}
       ${({ theme }) => theme.spacing.xxxxxl};
   }
-  }
 `;
 
 export const Section = styled.div`

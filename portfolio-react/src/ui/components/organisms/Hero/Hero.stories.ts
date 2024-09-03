@@ -13,7 +13,7 @@ type Story = StoryObj<typeof Hero>;
 
 export const Primary: Story = {
   args: {
-    connectText: "Conecta conmigo",
-    resumeText: "Mis Trabajos",
+    primaryCtaText: "Conecta conmigo",
+    secondaryCtaText: "Mis Trabajos",
   },
 };

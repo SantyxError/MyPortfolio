@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import Card from "../Card/Card";
 
 const meta: Meta<typeof Card> = {
-  title: "Atoms/MyService",
+  title: "Atoms/Card",
   component: Card,
   argTypes: {
     number: { control: "text" },

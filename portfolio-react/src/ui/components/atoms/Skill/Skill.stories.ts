@@ -1,10 +1,10 @@
-import { Meta, StoryObj } from '@storybook/react';
-import Skill from './Skill';
+import { Meta, StoryObj } from "@storybook/react";
+import Skill from "./Skill";
 
 const meta: Meta<typeof Skill> = {
-  title: 'Molecules/Skill',
+  title: "atoms/Skill",
   component: Skill,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 };
 
 export default meta;
@@ -12,8 +12,8 @@ type Story = StoryObj<typeof Skill>;
 
 export const Primary: Story = {
   args: {
-    imageSrc: 'src/assets/skills/html5-original-wordmark.svg',
-    altText: 'HTML',
-    text: 'HTML',
-  }
+    imageSrc: "src/assets/skills/html5-original-wordmark.svg",
+    altText: "HTML",
+    text: "HTML",
+  },
 };

@@ -2,10 +2,10 @@ import MyWorksList from "./MyWorksList";
 import { Meta, StoryObj } from "@storybook/react";
 
 const exampleData = [
-  { id: 1, title: "Project 1", w_img: "src/assets/project_1.svg" },
-  { id: 2, title: "Project 2", w_img: "src/assets/project_2.svg" },
-  { id: 3, title: "Project 3", w_img: "src/assets/project_3.svg" },
-  { id: 4, title: "Project 4", w_img: "src/assets/project_4.svg" },
+  { title: "Project 1", workImg: "src/assets/project_1.svg" },
+  { title: "Project 2", workImg: "src/assets/project_2.svg" },
+  { title: "Project 3", workImg: "src/assets/project_3.svg" },
+  { title: "Project 4", workImg: "src/assets/project_4.svg" },
 ];
 
 const meta: Meta<typeof MyWorksList> = {
@@ -15,6 +15,7 @@ const meta: Meta<typeof MyWorksList> = {
 };
 
 export default meta;
+
 type Story = StoryObj<typeof MyWorksList>;
 
 export const Default: Story = {

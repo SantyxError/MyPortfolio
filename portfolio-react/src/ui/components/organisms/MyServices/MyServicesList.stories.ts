@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
-import MyServicesList from "../MyServices/MyServicesList";
-import { MyServiceProps } from "../../atoms/MyService/MyService";
+import MyServicesList from "./MyServicesList";
+import { CardProps } from "../../atoms/Card/Card";
 
 const meta: Meta<typeof MyServicesList> = {
   title: "Organisms/MyServicesList",
@@ -17,20 +17,23 @@ export const Playground: Story = {
   args: {
     services: [
       {
-        s_no: "01",
-        s_name: "Web design",
-        s_desc: "Web development is the process of building, programming...",
+        number: "01",
+        name: "Web design",
+        description:
+          "Web development is the process of building, programming...",
       },
       {
-        s_no: "02",
-        s_name: "Graphics design",
-        s_desc: "Web development is the process of building, programming...",
+        number: "02",
+        name: "Graphics design",
+        description:
+          "Graphics design involves creating visual content to communicate messages...",
       },
       {
-        s_no: "03",
-        s_name: "Social media",
-        s_desc: "Web development is the process of building, programming...",
+        number: "03",
+        name: "Social media",
+        description:
+          "Social media services help businesses to promote their products and services...",
       },
-    ] as MyServiceProps[],
+    ] as CardProps[],
   },
 };

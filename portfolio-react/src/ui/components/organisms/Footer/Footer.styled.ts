@@ -72,6 +72,7 @@ export const Bottom = styled.div`
   ${({ theme }) => theme.mediaQueries.desktop} {
     flex-direction: row;
     text-align: left;
+    align-items: baseline;
   }
 `;
 
